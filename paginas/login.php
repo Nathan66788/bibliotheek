@@ -40,6 +40,7 @@
             </div>
         </div>
     </main>
+
 <?php include '../includes/footer.php'; ?>
     <script src="script.js"></script>
 </body>

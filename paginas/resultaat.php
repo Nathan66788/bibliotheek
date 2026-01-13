@@ -81,5 +81,9 @@ if (!$boek) {
     <?php include '../includes/footer.php'; ?>
 
     <script src="script.js"></script>
+    <script>
+        // resultaat laten zien wanneer de pagina laad
+        window.onload = showResult;
+    </script>
 </body>
 </html>
