@@ -34,9 +34,6 @@
             <a href="register.php" class="register-link">Nog geen account? Registreer hier!</a>
 
             <div class="demo-box">
-                <p><strong>Demo inloggegevens:</strong></p>
-                <p>Admin: admin@boekzoeker.nl / admin</p>
-                <p>Medewerker: medewerker@boekzoeker.nl / medewerker</p>
             </div>
         </div>
     </main>
