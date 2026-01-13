@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jouw resultaat - Boekzoeker.nl</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo"><i class="fas fa-search"></i> Boekzoeker.nl</div>
-        <a href="#" class="login-link"><i class="far fa-user-circle"></i> Inloggen</a>
-    </nav>
+    <?php include '../includes/header.php'; ?>
 
     <main class="result-container">
-        <a href="quiz.html" class="back-link"><i class="fas fa-arrow-left"></i> Terug naar vragen</a>
+        <a href="quiz.php" class="back-link"><i class="fas fa-arrow-left"></i> Terug naar vragen</a>
 
         <div class="book-detail-card" id="resultContent">
             <p>Laden...</p>
@@ -32,10 +28,7 @@
             <p id="bookDescription">Een korte beschrijving van het boek...</p>
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Boekzoeker.nl - Vind jouw perfecte boek</p>
-    </footer>
+<?php include '../includes/footer.php'; ?>
 
     <script src="script.js"></script>
     <script>

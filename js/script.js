@@ -1,13 +1,7 @@
-/**
- * BOEKZOEKER.NL - LOGICA
- * Inclusief Vragenlijst-flow en Boek-matching voor Bibliotheek Zoetermeer
- */
 
-// --- 1. VARIABELEN VOOR DE QUIZ ---
 let currentStep = 1;
 const totalSteps = 4;
 
-// --- 2. FUNCTIES VOOR DE QUIZ (quiz.html) ---
 
 function updateProgressBar() {
     const countElem = document.getElementById('questionCount');
@@ -65,10 +59,9 @@ function finishQuiz() {
     localStorage.setItem('selectedAge', ageInput.value);
     
     // Stuur de gebruiker naar de resultatenpagina
-    window.location.href = 'resultaat.html';
+    window.location.href = 'resultaat.php';
 }
 
-// --- 3. FUNCTIES VOOR HET RESULTAAT (resultaat.html) ---
 
 function showResult() {
     const resultContainer = document.getElementById('resultContent');
@@ -89,7 +82,7 @@ function showResult() {
     // Als er echt niks is, pak het eerste boek
     if (!match) match = booksDatabase[0];
 
-    // Bouw de HTML voor het resultaat (Gebaseerd op screenshot 5)
+    // Bouw de HTML voor het resultaat
     resultContainer.innerHTML = `
         <img src="${match.image}" alt="${match.title}" class="book-cover-img">
         
@@ -128,7 +121,6 @@ function showResult() {
     }
 }
 
-// --- 4. DE "DATABASE" (BOEKENLIJST) ---
 const booksDatabase = [
     {
         title: "Oorsprong",
