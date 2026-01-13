@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vragenlijst - Boekzoeker.nl</title>
-    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <nav class="navbar">
-        <div class="logo"><i class="fas fa-search"></i> Boekzoeker.nl</div>
-        <a href="#" class="login-link"><i class="far fa-user-circle"></i> Inloggen</a>
-    </nav>
-
+ <?php include '../includes/header.php'; ?>
     <main class="quiz-container">
-        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Terug naar home</a>
+        <a href="index.php" class="back-link"><i class="fas fa-arrow-left"></i> Terug naar home</a>
         
         <div class="progress-container">
             <span id="questionCount">Vraag 1 van 5</span>
@@ -153,7 +150,12 @@
 
         </form>
     </main>
+<<<<<<< HEAD:html/quiz.html
 
     <script src="../js/script.js"></script>
+=======
+ <?php include '../includes/footer.php'; ?>
+    <script src="script.js"></script>
+>>>>>>> 8235fd978ba0d732cb3cf77c91034d9ab250f4d2:paginas/quiz.php
 </body>
 </html>

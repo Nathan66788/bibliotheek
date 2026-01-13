@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inloggen - Boekzoeker.nl</title>
-    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="login-page">
 
-    <nav class="navbar">
-        <div class="logo"><i class="fas fa-search"></i> Boekzoeker.nl</div>
-        <a href="login.html" class="login-link"><i class="far fa-user-circle"></i> Inloggen</a>
-    </nav>
-
+<?php include '../includes/header.php'; ?>
     <main class="login-container">
         <div class="login-card">
             <h2>Boekzoeker.nl</h2>
@@ -42,11 +40,16 @@
             </div>
         </div>
     </main>
+<<<<<<< HEAD:html/login.html
 
     <footer class="footer-fixed">
         <p>&copy; 2026 Boekzoeker.nl - Vind jouw perfecte boek</p>
     </footer>
 
     <script src="/js/script.js"></script>
+=======
+<?php include '../includes/footer.php'; ?>
+    <script src="script.js"></script>
+>>>>>>> 8235fd978ba0d732cb3cf77c91034d9ab250f4d2:paginas/login.php
 </body>
 </html>
