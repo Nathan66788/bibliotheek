@@ -5,7 +5,7 @@
 
 // --- 1. VARIABELEN VOOR DE QUIZ ---
 let currentStep = 1;
-const totalSteps = 4;
+const totalSteps = 5;
 
 // --- 2. FUNCTIES VOOR DE QUIZ (quiz.html) ---
 
