@@ -31,7 +31,7 @@
                 <button type="submit" class="btn-login">Login</button>
             </form>
 
-            <a href="#" class="register-link">Nog geen account? Registreer hier!</a>
+            <a href="register.php" class="register-link">Nog geen account? Registreer hier!</a>
 
             <div class="demo-box">
                 <p><strong>Demo inloggegevens:</strong></p>
