@@ -1,3 +1,10 @@
+<?php
+include '../php/database.php';
+include '../php/functions.php';
+include '../php/forms.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -17,27 +24,29 @@
             <h2>Boekzoeker.nl</h2>
             <p class="subtitle">Log in met je account</p>
 
-            <form id="loginForm">
+            <form method="post" id="loginForm">
                 <div class="input-group">
                     <label for="email">Gebruikersnaam of E-mail</label>
-                    <input type="text" id="email" placeholder="naam@voorbeeld.nl" required>
+                    <input type="text" name="userMail" placeholder="naam@voorbeeld.nl" required>
                 </div>
 
                 <div class="input-group">
                     <label for="password">Wachtwoord</label>
-                    <input type="password" id="password" placeholder="********" required>
+                    <input type="password" name="password" id="password" placeholder="********" required>
                 </div>
 
                 <button type="submit" class="btn-login">Login</button>
             </form>
 
-            <a href="register.php" class="register-link">Nog geen account? Registreer hier!</a>
+            <a href="#" class="register-link">Nog geen account? Registreer hier!</a>
 
             <div class="demo-box">
+                <p><strong>Demo inloggegevens:</strong></p>
+                <p>Admin: admin@boekzoeker.nl / admin</p>
+                <p>Medewerker: medewerker@boekzoeker.nl / medewerker</p>
             </div>
         </div>
     </main>
-
 <?php include '../includes/footer.php'; ?>
     <script src="script.js"></script>
 </body>
