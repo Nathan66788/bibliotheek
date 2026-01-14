@@ -7,7 +7,7 @@ function loginCheck($userMail, $password)
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if (
         ($userMail == $user["email"] || $userMail == $user["username"])
-        && $password == $user["password"]
+        && password_verify($password, $user["password"])
     ) {
         loginSucess($user["user_id"], $user["username"]);
     } else {
@@ -20,6 +20,7 @@ function loginSucess($id, $username)
     global $conn;
     $_SESSION["id"] = $id;
     $_SESSION["username"] = $username;
+    $_SESSION["loggedIn"] = true;
     header("Location: ../paginas/index.php");
 }
 function validateUsername($username)
@@ -34,19 +35,22 @@ function registerCheck($username, $email, $password, $password2)
         $stmt->execute([$username, $email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC); 
         if ($user === false) {
-            echo "geen user dus maak account";
+            createAccount($username, $email, $password);
         } else {
             print_r($user);
             echo "er is user geen account maken pls";
         }
-
-        createAccount($username, $email, $password);
     } else {
         echo "password no same you bum";
     }
 }
 function createAccount($username, $email, $password)
 {
-
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    global $conn;
+    $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?,?,?)");
+    $stmt-> execute([$username, $email, $hashedPassword]);
+    echo"account gemaakt";
+    loginCheck($email, $password);
 }
 ?>
