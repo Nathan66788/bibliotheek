@@ -1,3 +1,10 @@
+<?php
+include '../php/database.php';
+include '../php/functions.php';
+include '../php/forms.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -17,25 +24,25 @@
             <h2>Boekzoeker.nl</h2>
             <p class="subtitle">Maak een nieuw account aan</p>
 
-            <form id="registerForm">
+            <form method="post" id="registerForm">
                 <div class="input-group">
-                    <label for="name">Volledige naam</label>
-                    <input type="text" id="name" placeholder="Jan de Vries" required>
+                    <label for="name">Gebruikersnaam</label>
+                    <input name="newUsername"type="text" id="name" placeholder="Boeklezer123" required>
                 </div>
 
                 <div class="input-group">
                     <label for="email">E-mailadres</label>
-                    <input type="email" id="email" placeholder="naam@voorbeeld.nl" required>
+                    <input name="newEmail" type="email" id="email" placeholder="naam@voorbeeld.nl" required>
                 </div>
 
                 <div class="input-group">
                     <label for="password">Wachtwoord</label>
-                    <input type="password" id="password" placeholder="Minimaal 8 tekens" required>
+                    <input name="newPassword" type="password" id="password" placeholder="Minimaal 8 tekens" required>
                 </div>
 
                 <div class="input-group">
                     <label for="password-confirm">Wachtwoord bevestigen</label>
-                    <input type="password" id="password-confirm" placeholder="********" required>
+                    <input name="confirmNewPassword" type="password" id="password-confirm" placeholder="********" required>
                 </div>
 
                 <button type="submit" class="btn-login">Account aanmaken</button>
