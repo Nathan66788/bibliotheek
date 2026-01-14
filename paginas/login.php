@@ -1,7 +1,11 @@
 <?php
+session_start();
 include '../php/database.php';
 include '../php/functions.php';
 include '../php/forms.php';
+if ($_SESSION['loggedIn'] == true){
+        header("Location: ../paginas/index.php");
+}
 ?>
 
 
