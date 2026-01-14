@@ -2,6 +2,7 @@
 session_start();
 if (isset($_SESSION["id"])){
     echo"user logged in";
+    
 }
 ?>
 

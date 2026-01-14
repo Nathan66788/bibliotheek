@@ -4,7 +4,7 @@ $dbname = 'bibliotheek_db'; // Database name
 $username = 'root'; // Database username
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=bibliotheek_db", $username);
+  $conn = new PDO("mysql:host=$servername;dbname=bibliotheek_db", $username); //connect database
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) { 
 echo "Connection failed: " . $e->getMessage();
