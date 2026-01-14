@@ -3,7 +3,7 @@ session_start();
 include '../php/database.php';
 include '../php/functions.php';
 include '../php/forms.php';
-if ($_SESSION['loggedIn'] == true){
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
         header("Location: ../paginas/index.php");
 }
 ?>
@@ -48,6 +48,7 @@ if ($_SESSION['loggedIn'] == true){
                 <p><strong>Demo inloggegevens:</strong></p>
                 <p>Admin: admin@boekzoeker.nl / admin</p>
                 <p>Medewerker: medewerker@boekzoeker.nl / medewerker</p>
+            <p><?php  if (isset($errormessage)){echo($errormessage);}?></p>
             </div>
         </div>
     </main>
