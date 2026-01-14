@@ -1,0 +1,395 @@
+:root {
+    --primary-dark: #0b0c15; 
+    --accent-blue: #4a6cf7;
+    --bg-color: #f8f9fb;
+    --white: #ffffff;
+    --text-color: #333;
+    --gray-light: #e0e0e0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Navigatie */
+.navbar {
+    background: var(--white);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.logo span {
+    font-family: Arial Black, sans-serif;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+}
+
+.login-link {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Knoppen */
+.btn-primary {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--gray-light);
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Home */
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.steps-container {
+    text-align: left;
+    margin: 40px 0;
+}
+
+.step {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    background: var(--accent-blue);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+}
+
+/* Quiz */
+.quiz-container, .result-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.option {
+    display: block;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.option input {
+    display: none;
+}
+
+.option span {
+    display: block;
+    padding: 15px;
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.option input:checked + span {
+    border-color: var(--primary-dark);
+    background-color: #f0f0f5;
+    font-weight: bold;
+}
+
+.quiz-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* Resultaat Pagina */
+.book-detail-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.book-cover-img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: #ddd;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.book-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.tag {
+    background: #eee;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.location-box {
+    margin-top: 20px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.location-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-dark);
+}
+
+.location-details {
+    font-size: 0.9rem;
+    color: #555;
+    margin-left: 26px; 
+}
+
+.route-btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.tabs {
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+    border-bottom-color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.info-box {
+    background: white;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.quiz-step {
+    display: none; 
+    animation: fadeIn 0.5s;
+}
+
+.quiz-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0; 
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.progress-line {
+    
+    width: 100%;
+    height: 10px; 
+    position: relative;
+}
+
+.fill {
+    background: var(--accent-blue); 
+    height: 100%;
+    width: 0; 
+    transition: width 0.3s ease;
+}
+
+/* stijlen voor de Login Pagina */
+.login-page {
+    background-color: #f8f9fb;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #f0f2f5; 
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #0b0c15; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.register-link {
+    display: block;
+    margin-top: 20px;
+    color: #4a6cf7;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.demo-box {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.footer-fixed {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 0.8rem;
+}
