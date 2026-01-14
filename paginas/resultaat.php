@@ -2,9 +2,9 @@
 //verbinding met database
 $db = mysqli_connect("localhost", "root", "", "boekzoeker");
 
-// De keuzes ophalen die vanuit de quiz zijn meegestuurd in de URL
-$genre = $_GET['genre'] ?? '';
-$leeftijd = $_GET['age'] ?? '';
+// De keuzes ophalen vanuit die vanuit de quiz zijn meegestuurd via post
+$genre = $_POST['genre'] ?? '';
+$leeftijd = $_POST['age'] ?? '';
 
 // zoek in de database naar een boek dat past bij het genre en de leeftijd
 $sql = "SELECT * FROM boeken WHERE genre = '$genre' AND leeftijd = '$leeftijd' LIMIT 1";
@@ -14,7 +14,7 @@ $boek = mysqli_fetch_assoc($query);
 // als er geen exacte match is,pak het eerst boek uit die genre
 if (!$boek) {
     $sql = "SELECT * FROM boeken WHERE genre = '$genre' LIMIT 1";
-    $query = mysqli_query($db, $sql);
+    $query = mysqli_query ($db, $sql);
     $boek = mysqli_fetch_assoc($query);
 }
 
