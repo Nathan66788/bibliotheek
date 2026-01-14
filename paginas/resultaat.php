@@ -7,9 +7,6 @@ $dbname = 'bibliotheek_db';
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// De keuzes ophalen vanuit die vanuit de quiz zijn meegestuurd via post
-$genre = $_POST['genre'] ?? '';
-$leeftijd = $_POST['age'] ?? '';
 
     // Haal het genre op uit de URL 
     $gekozenGenre = isset($_GET['genre']) ? $_GET['genre'] : 'Fantasy';
@@ -24,11 +21,11 @@ $leeftijd = $_POST['age'] ?? '';
 
     $gekozenGenre = isset($_GET['genre']) ? $_GET['genre'] : 'Historisch';
 
-    // Zoek in de tabel 'boeken'
+    // Zoek in de tabel boeken
     $stmt = $conn->prepare("SELECT * FROM boeken WHERE genre LIKE :genre LIMIT 1");
     $stmt->execute(['genre' => "%$gekozenGenre%"]);
 
-    // Maakt de variabele $boeken aan door de rij uit de database te 'fetchen'
+    // Maakt de variabele $boeken aan door de rij uit de database te fetchen
     $boeken = $stmt->fetch(PDO::FETCH_ASSOC);
 
     // Voorbeeld als database niks ziet

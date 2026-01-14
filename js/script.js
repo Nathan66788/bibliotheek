@@ -48,15 +48,12 @@ function prevQuestion(step){
     showStep(currentStep);
 }
 
-//functie om quiz te eindigen en naar resultaat.php te sturen
-function finishQuiz(){
-    //laatste antwoord opslaan
-    if(!isAnswered(currentStep)){
-        alert("kies een antwoord");
-        return;
-    }
+function finishQuiz() {
+    // We pakken de waarde van het gekozen genre uit de quiz
+    const genre = document.querySelector('input[name="genre"]:checked').value;
 
-   quizForm.submit();
+    // Deze regel stuurt je naar de nieuwe pagina met het genre in de URL
+    window.location.href = 'resultaat.php?genre=' + encodeURIComponent(genre);
 }
 
 // start met eerste vraag zichtbaar
