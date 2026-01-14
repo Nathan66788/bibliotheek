@@ -7,6 +7,9 @@ $dbname = 'bibliotheek_db';
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// De keuzes ophalen vanuit die vanuit de quiz zijn meegestuurd via post
+$genre = $_POST['genre'] ?? '';
+$leeftijd = $_POST['age'] ?? '';
 
     // Haal het genre op uit de URL 
     $gekozenGenre = isset($_GET['genre']) ? $_GET['genre'] : 'Fantasy';
