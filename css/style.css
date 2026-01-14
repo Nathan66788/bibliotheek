@@ -255,7 +255,7 @@ body {
     font-weight: bold;
 }
 
-.info-box {
+.info-box, .reviews-box, .beschikbaarheid-box {
     background: white;
     padding: 20px;
     margin-top: 10px;

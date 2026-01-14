@@ -43,19 +43,10 @@ function prevQuestion(stepNumber) {
     updateProgressBar();
 }
 
-// verzamel de antwoorden en stuur door naar PHP
 function finishQuiz() {
-    // haal de waardes op van de geselecteerde buttons
-    const genre = document.querySelector('input[name="genre"]:checked')?.value;
-    const age = document.querySelector('input[name="age"]:checked')?.value;
-    const mood = document.querySelector('input[name="mood"]:checked')?.value;
-
-    // check of alles is ingevuld
-    if (!genre || !age || !mood) {
-        alert("Beantwoord alsjeblieft alle vragen!");
-        return;
-    }
-
-    // stuur gebruiker naar resultaat.php
-    window.location.href = `resultaat.php?genre=${genre}&age=${age}&mood=${mood}`;
+    // Zoek het geselecteerde genre op
+    const selectedGenre = document.querySelector('input[name="genre"]:checked').value;
+    
+    // Stuur de gebruiker door met het genre in de URL
+    window.location.href = 'resultaat.php?genre=' + encodeURIComponent(selectedGenre);
 }
