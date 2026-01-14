@@ -3,7 +3,7 @@ session_start();
 include '../php/database.php';
 include '../php/functions.php';
 include '../php/forms.php';
-if ($_SESSION['loggedIn'] == true){
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
         header("Location: ../paginas/index.php");
 }
 ?>
@@ -45,6 +45,7 @@ if ($_SESSION['loggedIn'] == true){
             <a href="register.php" class="register-link">Nog geen account? Registreer hier!</a>
 
             <div class="demo-box">
+            <p><?php  if (isset($errormessage)){echo($errormessage);}?></p>
             </div>
         </div>
     </main>

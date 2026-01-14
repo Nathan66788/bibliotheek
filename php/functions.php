@@ -1,17 +1,26 @@
 <?php
+
+$errormessage = "";
+$passwordError = "";
 function loginCheck($userMail, $password)
 {
     global $conn;
     $stmt = $conn->prepare("SELECT user_id, username, email, password, rol FROM users WHERE email = ? OR username = ?");
     $stmt->execute([$userMail, $userMail]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    if (
-        ($userMail == $user["email"] || $userMail == $user["username"])
-        && password_verify($password, $user["password"])
-    ) {
-        loginSucess($user["user_id"], $user["username"]);
+    if ($user === false) {
+        global $errormessage;
+        $errormessage = "Account bestaat niet";
     } else {
-        echo "not matching";
+        if (
+            ($userMail == $user["email"] || $userMail == $user["username"])
+            && password_verify($password, $user["password"])
+        ) {
+            loginSucess($user["user_id"], $user["username"]);
+        } else {
+            global $errormessage;
+            $errormessage = "Login is niet gelukt voer opnieuw je mail/wachtwoord";
+        }
     }
 }
 
@@ -33,15 +42,17 @@ function registerCheck($username, $email, $password, $password2)
         global $conn;
         $stmt = $conn->prepare('SELECT user_id, username, email FROM users WHERE username = ? OR email = ? ');
         $stmt->execute([$username, $email]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC); 
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($user === false) {
             createAccount($username, $email, $password);
         } else {
-            print_r($user);
-            echo "er is user geen account maken pls";
+            global $errormessage;
+            $errormessage = "Naam/Email is al in gebruik";
         }
     } else {
-        echo "password no same you bum";
+        global $passwordError;
+        $passwordError = "Wachtwoorden zijn niet hetzelfde";
+        echo $passwordError;
     }
 }
 function createAccount($username, $email, $password)
@@ -49,8 +60,7 @@ function createAccount($username, $email, $password)
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     global $conn;
     $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?,?,?)");
-    $stmt-> execute([$username, $email, $hashedPassword]);
-    echo"account gemaakt";
+    $stmt->execute([$username, $email, $hashedPassword]);
     loginCheck($email, $password);
 }
 ?>
