@@ -1,54 +1,188 @@
+
 :root {
-    --primary-dark: #0b0c15; 
-    --accent-blue: #4a6cf7;
-    --bg-color: #f8f9fb;
+    --primary-dark: #0f172a; 
+    --accent-gold: #c5a059;  
+    --accent-blue: #6366f1;
+    --bg-color: #f8fafc;
     --white: #ffffff;
-    --text-color: #333;
-    --gray-light: #e0e0e0;
+    --text-color: #1e293b;
+    --gray-light: #e2e8f0;
+    --gray-text: #64748b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth; 
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     margin: 0;
     color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Navigatie */
+h1, h2, h3, h4 {
+    font-family: 'Libre Baskerville', serif;
+    color: var(--primary-dark);
+}
+
+main, .boekmain, .quiz-container {
+    flex: 1;
+}
+
+/*Navigatie*/
 .navbar {
     background: var(--white);
-    padding: 15px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--gray-light);
+    padding: 0 20px;
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.2rem;
     text-decoration: none;
-    color: black;
+    color: var(--primary-dark);
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.logo span {
-    font-family: Arial Black, sans-serif;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
-    padding: 0;
+.logo i {
+    color: var(--accent-blue);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
     margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
     text-decoration: none;
-    color: black;
+    color: var(--gray-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-dark);
 }
 
 .login-link {
+    background: var(--primary-dark);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 50px;
     text-decoration: none;
-    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
 }
 
-/* Knoppen */
+.login-link:hover {
+    background: var(--accent-gold);
+    transform: translateY(-1px);
+}
+
+/* Footer */
+footer {
+    background: var(--white);
+    color: var(--gray-text);
+    padding: 30px 0 15px;
+    border-top: 1px solid var(--gray-light);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.footer-column p {
+    margin: 0;
+    font-size: 0.9rem;
+    max-width: 350px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-column ul a {
+    text-decoration: none;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-column ul a:hover {
+    color: var(--accent-gold);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-dark);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+
+
+/*Knoppen */
 .btn-primary {
     background-color: var(--primary-dark);
     color: var(--white);
@@ -57,7 +191,14 @@ body {
     text-decoration: none;
     border: none;
     cursor: pointer;
+    font-weight: 600;
     display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold);
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -66,12 +207,17 @@ body {
     padding: 12px 24px;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Home */
+/* Home Pagina */
 .hero {
+    background: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
+    padding: 80px 20px;
     text-align: center;
-    padding: 40px 20px;
+}
+
+.hero-content {
     max-width: 800px;
     margin: 0 auto;
 }
@@ -79,6 +225,10 @@ body {
 .steps-container {
     text-align: left;
     margin: 40px 0;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .step {
@@ -88,10 +238,10 @@ body {
 }
 
 .step-number {
-    background: var(--accent-blue);
+    background: var(--primary-dark);
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -104,395 +254,240 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 40px 20px;
     flex-wrap: wrap;
 }
 
 .feature-card {
     background: var(--white);
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
-    width: 250px;
+    width: 280px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
 }
 
 .feature-card i {
-    font-size: 2rem;
-    color: var(--accent-blue);
-    margin-bottom: 10px;
-}
-
-/* Quiz */
-.quiz-container, .result-container {
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-.card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.option {
-    display: block;
+    font-size: 2.5rem;
+    color: var(--accent-gold);
     margin-bottom: 15px;
+}
+
+/* Boeken Overzicht */
+.boekheader {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.boekheader h1 { color: white; margin: 0; }
+
+.boekheader input {
+    margin-top: 25px;
+    padding: 12px 25px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.boekmain {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+#bookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 1px solid var(--gray-light);
     cursor: pointer;
 }
 
-.option input {
+.book-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.book-card h2 {
+    font-size: 1.1rem;
+    padding: 15px 15px 5px;
+    margin: 0;
+}
+
+.book-card p {
+    padding: 0 15px 15px;
+    color: var(--gray-text);
+    margin: 0;
+}
+
+.book-card span {
+    display: block;
+    padding: 12px 15px;
+    background: #f8fafc;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
+.available { 
+    color: #10b981; 
+    font-weight: 600; 
+}
+
+.unavailable { 
+    color: #ef4444; 
+    font-weight: 600; 
+}
+
+/*Quiz Pagina */
+.quiz-container {
+     max-width: 800px; 
+     width: 100%;
+     margin: 40px auto; 
+     padding: 0 20px; 
+    }
+
+.quiz-card { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 16px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+}
+
+.quiz-step { 
     display: none;
+ }
+
+ .quiz-actions {
+    display: flex;
+    justify-content: space-between ; 
+    margin-top: 40px;
+}
+
+.quiz-step.active { 
+    display: block; 
+    animation: fadeIn 0.4s ease-out; 
+}
+
+.option { 
+    display: block; 
+    margin-bottom: 12px; 
+    cursor: pointer; 
+}
+
+.option input { 
+    display: none; 
 }
 
 .option span {
     display: block;
-    padding: 15px;
-    border: 1px solid var(--gray-light);
-    border-radius: 8px;
+    padding: 16px;
+    border: 2px solid var(--gray-light);
+    border-radius: 12px;
     transition: 0.2s;
 }
 
 .option input:checked + span {
     border-color: var(--primary-dark);
-    background-color: #f0f0f5;
-    font-weight: bold;
+    background-color: #f1f5f9;
+    font-weight: 600;
 }
 
-.quiz-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
-
-/* Resultaat Pagina */
-.book-detail-card {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.book-cover-img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-    background-color: #ddd;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-}
-
-.book-info {
-    flex: 1;
-    min-width: 250px;
-}
-
-.tag {
-    background: #eee;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-right: 5px;
-}
-
-.location-box {
-    margin-top: 20px;
-    background: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-}
-
-.location-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: var(--primary-dark);
-}
-
-.location-details {
-    font-size: 0.9rem;
-    color: #555;
-    margin-left: 26px; 
-}
-
-.route-btn {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 8px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.tabs {
-    margin-top: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.tab {
-    background: none;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    border-bottom: 3px solid transparent;
-}
-
-.tab.active {
-    border-bottom-color: var(--primary-dark);
-    font-weight: bold;
-}
-
-.info-box, .reviews-box, .beschikbaarheid-box {
-    background: white;
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 12px;
-}
-
-.quiz-step {
-    display: none; 
-    animation: fadeIn 0.5s;
-}
-
-.quiz-step.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.progress-bar {
-    width: 100%;
-    background: #e0e0e0; 
+.progress-bar { 
+    width: 100%; 
+    background: var(--gray-light);
     border-radius: 10px;
-    overflow: hidden;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 15px 0 35px; }
+
+.fill { 
+    background: var(--accent-gold);
+    height: 8px; 
+    border-radius: 10px; 
+    transition: 0.4s; 
 }
 
-.progress-line {
-    
-    width: 100%;
-    height: 10px; 
-    position: relative;
-}
 
-.fill {
-    background: var(--accent-blue); 
-    height: 100%;
-    width: 0; 
-    transition: width 0.3s ease;
-}
-
-/* stijlen voor de Login Pagina */
-.login-page {
-    background-color: #f8f9fb;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.login-container {
-    flex: 1;
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    z-index: 2000;
 }
 
-.login-card {
+.hidden { display: none; }
+
+.modal-content {
     background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
 
-.login-card h2 {
-    margin-bottom: 5px;
-    font-size: 1.8rem;
-}
-
-.subtitle {
-    color: #888;
-    margin-bottom: 30px;
-}
-
-.input-group {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #f0f2f5; 
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-.btn-login {
-    width: 100%;
-    padding: 12px;
-    background-color: #0b0c15; 
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
+#closeModal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
     cursor: pointer;
-    margin-top: 10px;
+    color: var(--gray-text);
 }
 
-.register-link {
-    display: block;
-    margin-top: 20px;
-    color: #4a6cf7;
-    text-decoration: none;
-    font-size: 0.9rem;
+/* Over Ons Sectie*/
+.about-section {
+    background: var(--primary-dark);
+    color: white;
+    padding: 60px 20px;
 }
 
-.demo-box {
-    margin-top: 30px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    text-align: left;
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.5;
+.about-section h2 { 
+    color: var(--accent-gold); 
+    margin-top: 0; 
 }
 
-.footer-fixed {
-    text-align: center;
-    padding: 20px;
-    color: #999;
-    font-size: 0.8rem;
-}
+.about-container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px;
+ }
 
-/* ============================================================
-   ADMIN PAGINA SPECIFIEKE STIJLEN 
-   (Heeft geen invloed op de rest van de site)
-   ============================================================ */
 
-/* Zorgt voor de gevraagde ruimte aan de zijkant en centrering */
-.admin-wrapper {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 30px; /* Hier is de ruimte aan de zijkant */
-}
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
 
-/* De witte kaart voor het formulier en de tabel */
-.admin-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    padding: 40px;
-    margin-bottom: 30px;
-}
-
-/* Grid voor de invoervelden */
-.admin-form .form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-/* Labels boven de velden */
-.admin-form label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-/* Styling voor Dropdowns, Inputs en de Beschrijving (Textarea) */
-.admin-form input, 
-.admin-form select, 
-.admin-form textarea {
-    width: 100%;
-    padding: 12px 15px !important; /* !important om browser-headers te negeren */
-    border: 1px solid #ddd !important;
-    border-radius: 8px !important;
-    font-size: 16px !important;
-    background-color: #fcfcfc !important;
-    box-sizing: border-box;
-    font-family: inherit;
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* De Dropdown (select) specifiek stylen met een eigen pijltje */
-.admin-form select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 14px;
-    padding-right: 40px !important;
-}
-
-/* De Beschrijving (textarea) extra hoog maken */
-.admin-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/* Focus effecten */
-.admin-form input:focus, 
-.admin-form select:focus, 
-.admin-form textarea:focus {
-    outline: none;
-    border-color: #4a6cf7 !important;
-    background-color: #fff !important;
-    box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
-}
-
-/* Tabel styling onderaan de pagina */
-.table-responsive {
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.admin-table th, .admin-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-
-.table-img {
-    width: 40px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 4px;
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }

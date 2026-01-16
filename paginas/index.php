@@ -1,8 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["id"])){
-    echo"user logged in";
-    
+    echo "<div style='padding:10px; background:#eef2ff; text-align:center;'>User logged in</div>";
 }
 
 $books = [
@@ -18,23 +17,23 @@ $books = [
     ],
     [
         "id" => 2,
-        "title" => "Snor",
+        "title" => "1984",
         "author" => "George Orwell",
         "year" => 1949,
         "genre" => "Dystopie",
         "description" => "Een beklemmende toekomstvisie over een totalitaire staat.",
         "available" => false,
-        "image" => "./images/hobbit.jpg"
+        "image" => "./images/1984.jpg"
     ],
     [
         "id" => 3,
-        "title" => "Snor",
-        "author" => "George Orwell",
-        "year" => 1949,
-        "genre" => "Dystopie",
-        "description" => "Een beklemmende toekomstvisie over een totalitaire staat.",
-        "available" => false,
-        "image" => "./images/hobbit.jpg"
+        "title" => "Sapiens",
+        "author" => "Yuval Noah Harari",
+        "year" => 2011,
+        "genre" => "Geschiedenis",
+        "description" => "Een ontdekkingsreis door de geschiedenis van de mensheid.",
+        "available" => true,
+        "image" => "./images/sapiens.jpg"
     ],
 ];
 ?>
@@ -47,40 +46,44 @@ $books = [
     <title>Boekzoeker.nl - Vind jouw perfecte boek</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <?php include '../includes/header.php'; ?>
-    <header class="hero">
-        <h1>Vind jouw perfecte boek!</h1>
-        <p>Doe de test welke bij jou past! Met onze slimme vragenlijst vinden we het ideale boek dat perfect aansluit bij jouw voorkeuren.</p>
-        
-        <div class="steps-container">
-            <h3>Hoe werkt het?</h3>
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-text">
-                    <strong>Doe de test</strong>
-                    <p>Beantwoord een paar vragen over je leesvoorkeuren</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-text">
-                    <strong>Krijg aanbevelingen</strong>
-                    <p>Zie boeken die perfect bij jou passen</p>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-text">
-                    <strong>Vind je boek</strong>
-                    <p>Zie direct waar het boek in de bibliotheek ligt (Zoetermeer)</p>
-                </div>
-            </div>
-        </div>
 
-        <a href="quiz.php" class="btn-primary">Start de vragenlijst <i class="fas fa-arrow-right"></i></a>
+    <header class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Vind jouw perfecte boek!</h1>
+            <p>Doe de test welke bij jou past! Met onze slimme vragenlijst vinden we het ideale boek dat perfect aansluit bij jouw voorkeuren.</p>
+            
+            <div class="steps-container">
+                <h3>Hoe werkt het?</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <strong>Doe de test</strong>
+                        <p>Beantwoord een paar vragen over je leesvoorkeuren</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <strong>Krijg aanbevelingen</strong>
+                        <p>Zie boeken die perfect bij jou passen</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <strong>Vind je boek</strong>
+                        <p>Zie direct waar het boek in de bibliotheek ligt (Zoetermeer)</p>
+                    </div>
+                </div>
+            </div>
+
+            <a href="quiz.php" class="btn-primary">Start de vragenlijst <i class="fas fa-arrow-right"></i></a>
+        </div>
     </header>
 
     <section class="features">
@@ -101,49 +104,66 @@ $books = [
         </div>
     </section>
 
-      <header class="boekheader">
+    <section id="collectie">
+    <header class="boekheader" >
         <h1>📚 Collectie</h1>
         <input type="text" id="searchInput" placeholder="Zoek op titel of auteur...">
     </header>
  
     <main class="boekmain">
- 
         <div id="bookList">
-    <?php foreach ($books as $book): ?>
-        <div class="book-card"
-             data-title="<?= htmlspecialchars($book['title']) ?>"
-             data-author="<?= htmlspecialchars($book['author']) ?>"
-             data-year="<?= $book['year'] ?>"
-             data-genre="<?= htmlspecialchars($book['genre']) ?>"
-             data-description="<?= htmlspecialchars($book['description']) ?>"
-             data-available="<?= $book['available'] ? '1' : '0' ?>"
-        >
-            <img src="<?= htmlspecialchars($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>">
-            <h2><?= htmlspecialchars($book['title']) ?></h2>
-            <p><?= htmlspecialchars($book['author']) ?></p>
-            <span class="<?= $book['available'] ? 'available' : 'unavailable' ?>">
-                <?= $book['available'] ? 'Beschikbaar' : 'Niet beschikbaar' ?>
-            </span>
+        <?php foreach ($books as $book): ?>
+            <div class="book-card"
+                 data-title="<?= htmlspecialchars($book['title']) ?>"
+                 data-author="<?= htmlspecialchars($book['author']) ?>"
+                 data-year="<?= $book['year'] ?>"
+                 data-genre="<?= htmlspecialchars($book['genre']) ?>"
+                 data-description="<?= htmlspecialchars($book['description']) ?>"
+                 data-available="<?= $book['available'] ? '1' : '0' ?>"
+            >
+                <img src="<?= htmlspecialchars($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>">
+                <h2><?= htmlspecialchars($book['title']) ?></h2>
+                <p><?= htmlspecialchars($book['author']) ?></p>
+                <span class="<?= $book['available'] ? 'available' : 'unavailable' ?>">
+                    <?= $book['available'] ? 'Beschikbaar' : 'Niet beschikbaar' ?>
+                </span>
+            </div>
+        <?php endforeach; ?>
         </div>
-    <?php endforeach; ?>
-        </div>
- 
     </main>
+        </section>
+
+    <section id="about-section" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Over Bibliotheek Zoetermeer</h2>
+                <p>Wij zijn de plek voor ontmoeting en ontwikkeling in het hart van Zoetermeer. Onze collectie is met zorg samengesteld voor jong en oud.</p>
+                <p><strong>Locatie:</strong> Forum Zoetermeer, Stadhuisplein 1.</p>
+            </div>
+            <div class="openingstijden">
+                <h3>Openingstijden</h3>
+                <ul>
+                    <li><span>Maandag - Vrijdag:</span> 10:00 - 20:00</li>
+                    <li><span>Zaterdag:</span> 10:00 - 17:00</li>
+                    <li><span>Zondag:</span> 12:00 - 17:00</li>
+                </ul>
+            </div>
+        </div>
+    </section>
  
     <div id="modal" class="modal hidden">
         <div class="modal-content">
             <span id="closeModal">&times;</span>
             <h2 id="modalTitle"></h2>
- 
             <img id="modalImage" src="" alt="" class="modal-image">
- 
             <p><strong>Auteur:</strong> <span id="modalAuthor"></span></p>
             <p><strong>Jaar:</strong> <span id="modalYear"></span></p>
             <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
             <p id="modalDescription"></p>
-            <button id="reserveBtn"></button>
+            <button id="reserveBtn" class="btn-primary"></button>
         </div>
     </div>
+
     <?php include '../includes/footer.php'; ?>
 
 </body>

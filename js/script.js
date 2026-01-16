@@ -6,8 +6,6 @@ const progressFillElem = document.getElementById('progressFill');
  
 let answers={};//slaat alle antwoorden op
 
-console.log(steps); // testen of alles goed is ingeladen
-
 // functie om een stap zichtbaar te maken
 function showStep(stepNumber){
     steps.forEach(step => { 
@@ -15,9 +13,10 @@ function showStep(stepNumber){
     });
 
     const current = document.getElementById(`step-${stepNumber}`); // juiste stap ophalen
-    current.classList.add('active'); // zichtbaar maken
-
-    updateProgress(stepNumber); //update progress bar
+    if(current) {
+        current.classList.add('active'); // zichtbaar maken
+        updateProgress(stepNumber); //update progress bar
+    }
 }
 
 // check of een vraag beantwoord is
@@ -30,13 +29,9 @@ function isAnswered(step){
 // ga naar volgende vraag
 function nextQuestion(step){
     if(!isAnswered(step)){ 
-        alert("Kies een antwoord");
+        alert("Selecteer alstublieft een antwoord voordat u verder gaat.");
         return;
     }
-
-    //antwoord opslaan
-    const stepElement = document.getElementById(`step-${step}`);
-    const checkedInput = stepElement.querySelector('input[type="radio"]:checked')
 
     currentStep = step + 1;
     showStep(currentStep);
@@ -50,24 +45,33 @@ function prevQuestion(step){
 
 function finishQuiz() {
     // We pakken de waarde van het gekozen genre uit de quiz
-    const genre = document.querySelector('input[name="genre"]:checked').value;
+    const genreInput = document.querySelector('input[name="genre"]:checked');
+    if(!genreInput) {
+        alert("Maak de test af om een resultaat te zien.");
+        return;
+    }
+    const genre = genreInput.value;
 
     // Deze regel stuurt je naar de nieuwe pagina met het genre in de URL
     window.location.href = 'resultaat.php?genre=' + encodeURIComponent(genre);
 }
 
-// start met eerste vraag zichtbaar
-showStep(currentStep);
-
 function updateProgress(stepNumber){
-    //update tekst: vraag X van Y
-    questionCountElem.innerText = `Vraag ${stepNumber} van ${totalSteps}`;
-    //update de breedte van de progress bar
-    const progressPercentage = (stepNumber / totalSteps) * 100;
-    progressFillElem.style.width = progressPercentage + '%';
+    if(questionCountElem) {
+        questionCountElem.innerText = `Vraag ${stepNumber} van ${totalSteps}`;
+    }
+    if(progressFillElem) {
+        const progressPercentage = (stepNumber / totalSteps) * 100;
+        progressFillElem.style.width = progressPercentage + '%';
+    }
 }
 
-// boekenpagina
+// Start met eerste vraag zichtbaar als we op de quiz pagina zijn
+if(steps.length > 0) {
+    showStep(currentStep);
+}
+
+// boekenpagina modal logica
 const cards = document.querySelectorAll(".book-card");
 const modal = document.getElementById("modal");
 const closeModal = document.getElementById("closeModal");
@@ -80,28 +84,34 @@ cards.forEach(card => {
         document.getElementById("modalYear").textContent = card.dataset.year;
         document.getElementById("modalGenre").textContent = card.dataset.genre;
         document.getElementById("modalDescription").textContent = card.dataset.description;
+        document.getElementById("modalImage").src = card.querySelector('img').src;
  
         if (card.dataset.available === "1") {
             reserveBtn.textContent = "Reserveren";
             reserveBtn.disabled = false;
+            reserveBtn.style.backgroundColor = ""; // reset
  
             reserveBtn.onclick = () => {
                 alert("Boek succesvol gereserveerd!");
                 reserveBtn.textContent = "Gereserveerd";
                 reserveBtn.disabled = true;
+                reserveBtn.style.backgroundColor = "#94a3b8";
             };
         } else {
             reserveBtn.textContent = "Niet beschikbaar";
             reserveBtn.disabled = true;
+            reserveBtn.style.backgroundColor = "#ef4444";
         }
  
         modal.classList.remove("hidden");
     });
 });
  
-closeModal.onclick = () => {
-    modal.classList.add("hidden");
-};
+if(closeModal) {
+    closeModal.onclick = () => {
+        modal.classList.add("hidden");
+    };
+}
  
 window.onclick = e => {
     if (e.target === modal) modal.classList.add("hidden");
