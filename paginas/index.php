@@ -1,4 +1,7 @@
 <?php
+include '../php/database.php';
+include '../php/functions.php';
+include '../php/forms.php';
 session_start();
 if (isset($_SESSION["id"])){
     echo"user logged in";
