@@ -123,6 +123,100 @@ body {
     margin-bottom: 10px;
 }
 
+/* boekenpagina */
+ 
+.boekheader {
+    background-color: #4a6cfa;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.boekheader input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: none;
+}
+ 
+.boekmain {
+    padding: 20px;
+}
+ 
+#bookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+ 
+.book-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+ 
+.book-card h2 {
+    margin-top: 0;
+    color: #34495e;
+}
+ 
+.available {
+    color: green;
+    font-weight: bold;
+}
+ 
+.unavailable {
+    color: red;
+    font-weight: bold;
+}
+ 
+.book-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+ 
+.book-card:hover {
+    transform: scale(1.03);
+}
+ 
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.hidden {
+    display: none;
+}
+ 
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    position: relative;
+}
+ 
+#closeModal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+ 
+#reserveBtn {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+}
+ 
 /* Quiz */
 .quiz-container, .result-container {
     max-width: 700px;

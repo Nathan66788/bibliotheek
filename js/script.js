@@ -66,3 +66,43 @@ function updateProgress(stepNumber){
     const progressPercentage = (stepNumber / totalSteps) * 100;
     progressFillElem.style.width = progressPercentage + '%';
 }
+
+// boekenpagina
+const cards = document.querySelectorAll(".book-card");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+const reserveBtn = document.getElementById("reserveBtn");
+ 
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        document.getElementById("modalTitle").textContent = card.dataset.title;
+        document.getElementById("modalAuthor").textContent = card.dataset.author;
+        document.getElementById("modalYear").textContent = card.dataset.year;
+        document.getElementById("modalGenre").textContent = card.dataset.genre;
+        document.getElementById("modalDescription").textContent = card.dataset.description;
+ 
+        if (card.dataset.available === "1") {
+            reserveBtn.textContent = "Reserveren";
+            reserveBtn.disabled = false;
+ 
+            reserveBtn.onclick = () => {
+                alert("Boek succesvol gereserveerd!");
+                reserveBtn.textContent = "Gereserveerd";
+                reserveBtn.disabled = true;
+            };
+        } else {
+            reserveBtn.textContent = "Niet beschikbaar";
+            reserveBtn.disabled = true;
+        }
+ 
+        modal.classList.remove("hidden");
+    });
+});
+ 
+closeModal.onclick = () => {
+    modal.classList.add("hidden");
+};
+ 
+window.onclick = e => {
+    if (e.target === modal) modal.classList.add("hidden");
+};
