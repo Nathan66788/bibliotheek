@@ -43,15 +43,17 @@ function prevQuestion(step){
     showStep(currentStep);
 }
 
-//functie om quiz te eindigen en naar resultaat.php te sturen
-function finishQuiz(){
-    //laatste antwoord opslaan
-    if(!isAnswered(currentStep)){
-        alert("kies een antwoord");
-    
-        
+function finishQuiz() {
+    // We pakken de waarde van het gekozen genre uit de quiz
+    const genreInput = document.querySelector('input[name="genre"]:checked');
+    if(!genreInput) {
+        alert("Maak de test af om een resultaat te zien.");
+        return;
     }
-    quizForm.submit();
+    const genre = genreInput.value;
+
+    // Deze regel stuurt je naar de nieuwe pagina met het genre in de URL
+    window.location.href = 'resultaat.php?genre=' + encodeURIComponent(genre);
 }
 
 function updateProgress(stepNumber){
