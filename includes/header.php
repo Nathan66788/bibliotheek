@@ -1,14 +1,25 @@
 <nav class="navbar">
-    <a href="index.php" class="logo"><i class="fas fa-search"></i><span> Boekzoeker.nl</span></a>
-    <a href="
-    <?php if (isset($_SESSION["id"])) {
-        echo "../php/logout.php";
-    } else {
-        echo "../paginas/login.php";
-    } ?>" class="login-link"> <i class="far fa-user-circle"></i><?php if (isset($_SESSION["id"])) {
-        echo " Uitloggen";
-    } else {
-        echo " Inloggen";
-    } ?>
-    </a>
+    <div class="nav-content">
+        <a href="index.php" class="logo">
+            <i class="fas fa-book-open"></i>
+            <span>Boekzoeker.nl</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.php#hero">Home</a></li>
+            <li><a href="index.php#collectie">Collectie</a></li>
+            <li><a href="quiz.php">Boekzoeker</a></li>
+            <li><a href="index.php#about-section">Over Ons</a></li>
+        </ul>
+
+        <a href="<?php 
+            if (isset($_SESSION["id"])) {
+                echo "../php/logout.php";
+            } else {
+                echo "../paginas/login.php";
+            } ?>" class="login-link">
+            <i class="far fa-user-circle"></i>
+            <span><?php echo isset($_SESSION["id"]) ? "Uitloggen" : "Inloggen"; ?></span>
+        </a>
+    </div>
 </nav>
