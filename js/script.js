@@ -48,10 +48,10 @@ function finishQuiz(){
     //laatste antwoord opslaan
     if(!isAnswered(currentStep)){
         alert("kies een antwoord");
-        return;
+    
+        
     }
-
-   quizForm.submit();
+    quizForm.submit();
 }
 
 function updateProgress(stepNumber){
@@ -68,3 +68,49 @@ function updateProgress(stepNumber){
 if(steps.length > 0) {
     showStep(currentStep);
 }
+
+// boekenpagina modal logica
+const cards = document.querySelectorAll(".book-card");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+const reserveBtn = document.getElementById("reserveBtn");
+ 
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        document.getElementById("modalTitle").textContent = card.dataset.title;
+        document.getElementById("modalAuthor").textContent = card.dataset.author;
+        document.getElementById("modalYear").textContent = card.dataset.year;
+        document.getElementById("modalGenre").textContent = card.dataset.genre;
+        document.getElementById("modalDescription").textContent = card.dataset.description;
+        document.getElementById("modalImage").src = card.querySelector('img').src;
+ 
+        if (card.dataset.available === "1") {
+            reserveBtn.textContent = "Reserveren";
+            reserveBtn.disabled = false;
+            reserveBtn.style.backgroundColor = ""; // reset
+ 
+            reserveBtn.onclick = () => {
+                alert("Boek succesvol gereserveerd!");
+                reserveBtn.textContent = "Gereserveerd";
+                reserveBtn.disabled = true;
+                reserveBtn.style.backgroundColor = "#94a3b8";
+            };
+        } else {
+            reserveBtn.textContent = "Niet beschikbaar";
+            reserveBtn.disabled = true;
+            reserveBtn.style.backgroundColor = "#ef4444";
+        }
+ 
+        modal.classList.remove("hidden");
+    });
+});
+ 
+if(closeModal) {
+    closeModal.onclick = () => {
+        modal.classList.add("hidden");
+    };
+}
+ 
+window.onclick = e => {
+    if (e.target === modal) modal.classList.add("hidden");
+};
