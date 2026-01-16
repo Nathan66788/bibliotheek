@@ -1,5 +1,6 @@
 <nav class="navbar">
     <a href="index.php" class="logo"><i class="fas fa-search"></i><span> Boekzoeker.nl</span></a>
+    <a href="adminpanel.php" class="logo"><i class="fas fa-user-tie"></i> Beheer</a>
     <a href="
     <?php if (isset($_SESSION["id"])) {
         echo "../php/logout.php";

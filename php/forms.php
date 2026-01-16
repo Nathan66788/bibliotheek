@@ -4,8 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $value1 = $_POST['userMail'];
         $value2 = $_POST['password'];
         loginCheck($value1, $value2);
-    } else {
-    }
+    } 
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -17,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $value4 = $_POST['confirmNewPassword'];
             registerCheck($value1, $value2, $value3, $value4);
         } else {
-global $errormessage;
-global $passwordError;
-$errormessage = "Ongeldige naam je naam mag maar 3-24 letters zijn en geen speciale karakters hebben";
+            global $errormessage;
+            global $passwordError;
+            $errormessage = "Ongeldige naam je naam mag maar 3-24 letters zijn en geen speciale karakters hebben";
         }
     }
 }
