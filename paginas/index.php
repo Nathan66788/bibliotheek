@@ -5,7 +5,41 @@ include '../php/forms.php';
 session_start();
 if (isset($_SESSION["id"])){
     echo"user logged in";
+    
 }
+
+$books = [
+    [
+        "id" => 1,
+        "title" => "De Hobbit",
+        "author" => "J.R.R. Tolkien",
+        "year" => 1937,
+        "genre" => "Fantasy",
+        "description" => "Een avontuurlijk fantasyverhaal over Bilbo Balings.",
+        "available" => true,
+        "image" => "./images/hobbit.jpg"
+    ],
+    [
+        "id" => 2,
+        "title" => "Snor",
+        "author" => "George Orwell",
+        "year" => 1949,
+        "genre" => "Dystopie",
+        "description" => "Een beklemmende toekomstvisie over een totalitaire staat.",
+        "available" => false,
+        "image" => "./images/hobbit.jpg"
+    ],
+    [
+        "id" => 3,
+        "title" => "Snor",
+        "author" => "George Orwell",
+        "year" => 1949,
+        "genre" => "Dystopie",
+        "description" => "Een beklemmende toekomstvisie over een totalitaire staat.",
+        "available" => false,
+        "image" => "./images/hobbit.jpg"
+    ],
+];
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +104,49 @@ if (isset($_SESSION["id"])){
         </div>
     </section>
 
+      <header class="boekheader">
+        <h1>📚 Collectie</h1>
+        <input type="text" id="searchInput" placeholder="Zoek op titel of auteur...">
+    </header>
+ 
+    <main class="boekmain">
+ 
+        <div id="bookList">
+    <?php foreach ($books as $book): ?>
+        <div class="book-card"
+             data-title="<?= htmlspecialchars($book['title']) ?>"
+             data-author="<?= htmlspecialchars($book['author']) ?>"
+             data-year="<?= $book['year'] ?>"
+             data-genre="<?= htmlspecialchars($book['genre']) ?>"
+             data-description="<?= htmlspecialchars($book['description']) ?>"
+             data-available="<?= $book['available'] ? '1' : '0' ?>"
+        >
+            <img src="<?= htmlspecialchars($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>">
+            <h2><?= htmlspecialchars($book['title']) ?></h2>
+            <p><?= htmlspecialchars($book['author']) ?></p>
+            <span class="<?= $book['available'] ? 'available' : 'unavailable' ?>">
+                <?= $book['available'] ? 'Beschikbaar' : 'Niet beschikbaar' ?>
+            </span>
+        </div>
+    <?php endforeach; ?>
+        </div>
+ 
+    </main>
+ 
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal">&times;</span>
+            <h2 id="modalTitle"></h2>
+ 
+            <img id="modalImage" src="" alt="" class="modal-image">
+ 
+            <p><strong>Auteur:</strong> <span id="modalAuthor"></span></p>
+            <p><strong>Jaar:</strong> <span id="modalYear"></span></p>
+            <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+            <p id="modalDescription"></p>
+            <button id="reserveBtn"></button>
+        </div>
+    </div>
     <?php include '../includes/footer.php'; ?>
 
 </body>

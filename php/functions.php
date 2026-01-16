@@ -58,12 +58,10 @@ function registerCheck($username, $email, $password, $password2)
         } else {
             global $passwordError;
             $passwordError = "Wachtwoorden zijn niet hetzelfde";
-            echo $passwordError;
         }
     } else {
         global $passwordError;
         $passwordError = "Wachtwoord is te kort";
-        echo $passwordError;
     }
 }
 

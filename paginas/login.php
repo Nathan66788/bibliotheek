@@ -45,11 +45,14 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
             <a href="register.php" class="register-link">Nog geen account? Registreer hier!</a>
 
             <div class="demo-box">
+                <p><strong>Demo inloggegevens:</strong></p>
+                <p>Admin: admin@boekzoeker.nl / admin</p>
+                <p>Medewerker: medewerker@boekzoeker.nl / medewerker</p>
             <p><?php  if (isset($errormessage)){echo($errormessage);}?></p>
             </div>
         </div>
     </main>
-<?php include '../includes/footer.php'; ?>  
+<?php include '../includes/footer.php'; ?>
     <script src="script.js"></script>
 </body>
 </html>

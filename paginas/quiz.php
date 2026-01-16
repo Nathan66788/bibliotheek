@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <form id="quizForm">
+       <form id="quizForm" action="resultaat.php" method="POST">
             
             <div class="card quiz-card quiz-step active" id="step-1">
                 <h2>1. Wat voor thema vind je het leukst?</h2>

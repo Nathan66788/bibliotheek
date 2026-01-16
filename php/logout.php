@@ -1,7 +1,7 @@
 <?php
-session_start();
+session_start(); //verwijder alle sessions
 session_unset();
 session_destroy();
-header("Location: ../paginas/index.php");
+header("Location: ../paginas/index.php"); //terug naar page
 exit;
 ?>

@@ -1,61 +1,108 @@
-let currentStep = 1;
-const totalSteps = 5;
+let currentStep = 1; // begin bij vraag 1
+const steps = document.querySelectorAll('.quiz-step'); // alle quizvragen ophalen
+const totalSteps = steps.length; //totaal aantal vragen
+const questionCountElem = document.getElementById('questionCount');
+const progressFillElem = document.getElementById('progressFill');
+ 
+let answers={};//slaat alle antwoorden op
 
-// update de tekst en de voortgangsbalk
-function updateProgressBar() {
-    const countElem = document.getElementById('questionCount');
-    const fillElem = document.getElementById('progressFill');
-    
-    if (countElem && fillElem) {
-        countElem.innerText = `Vraag ${currentStep} van ${totalSteps}`;
-        const percentage = (currentStep / totalSteps) * 100;
-        fillElem.style.width = `${percentage}%`;
-    }
+console.log(steps); // testen of alles goed is ingeladen
+
+// functie om een stap zichtbaar te maken
+function showStep(stepNumber){
+    steps.forEach(step => { 
+        step.classList.remove('active'); // maak alles onzichtbaar
+    });
+
+    const current = document.getElementById(`step-${stepNumber}`); // juiste stap ophalen
+    current.classList.add('active'); // zichtbaar maken
+
+    updateProgress(stepNumber); //update progress bar
 }
 
-// ga naar de volgende vraag
-function nextQuestion(stepNumber) {
-    const currentStepDiv = document.getElementById(`step-${stepNumber}`);
-    const checkedInput = currentStepDiv.querySelector('input[type="radio"]:checked');
+// check of een vraag beantwoord is
+function isAnswered(step){
+    const stepElement = document.getElementById(`step-${step}`);
+    const checked = stepElement.querySelector('input[type="radio"]:checked');
+    return checked !== null; 
+}
 
-    // Validatie: is er iets gekozen?
-    if (!checkedInput) {
-        alert("Maak eerst een keuze voordat je verder gaat!");
+// ga naar volgende vraag
+function nextQuestion(step){
+    if(!isAnswered(step)){ 
+        alert("Kies een antwoord");
         return;
     }
 
-    // Wissel van zichtbare div
-    currentStepDiv.classList.remove('active');
-    currentStep++;
-    
-    const nextStepDiv = document.getElementById(`step-${currentStep}`);
-    if (nextStepDiv) {
-        nextStepDiv.classList.add('active');
-        updateProgressBar();
-    }
+    //antwoord opslaan
+    const stepElement = document.getElementById(`step-${step}`);
+    const checkedInput = stepElement.querySelector('input[type="radio"]:checked')
+
+    currentStep = step + 1;
+    showStep(currentStep);
 }
 
-// Ga terug naar de vorige vraag
-function prevQuestion(stepNumber) {
-    document.getElementById(`step-${stepNumber}`).classList.remove('active');
-    currentStep--;
-    document.getElementById(`step-${currentStep}`).classList.add('active');
-    updateProgressBar();
+// ga naar vorige vraag
+function prevQuestion(step){
+    currentStep = step - 1;
+    showStep(currentStep);
 }
 
-// verzamel de antwoorden en stuur door naar PHP
 function finishQuiz() {
-    // haal de waardes op van de geselecteerde buttons
-    const genre = document.querySelector('input[name="genre"]:checked')?.value;
-    const age = document.querySelector('input[name="age"]:checked')?.value;
-    const mood = document.querySelector('input[name="mood"]:checked')?.value;
+    // We pakken de waarde van het gekozen genre uit de quiz
+    const genre = document.querySelector('input[name="genre"]:checked').value;
 
-    // check of alles is ingevuld
-    if (!genre || !age || !mood) {
-        alert("Beantwoord alsjeblieft alle vragen!");
-        return;
-    }
-
-    // stuur gebruiker naar resultaat.php
-    window.location.href = `resultaat.php?genre=${genre}&age=${age}&mood=${mood}`;
+    // Deze regel stuurt je naar de nieuwe pagina met het genre in de URL
+    window.location.href = 'resultaat.php?genre=' + encodeURIComponent(genre);
 }
+
+// start met eerste vraag zichtbaar
+showStep(currentStep);
+
+function updateProgress(stepNumber){
+    //update tekst: vraag X van Y
+    questionCountElem.innerText = `Vraag ${stepNumber} van ${totalSteps}`;
+    //update de breedte van de progress bar
+    const progressPercentage = (stepNumber / totalSteps) * 100;
+    progressFillElem.style.width = progressPercentage + '%';
+}
+
+// boekenpagina
+const cards = document.querySelectorAll(".book-card");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+const reserveBtn = document.getElementById("reserveBtn");
+ 
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        document.getElementById("modalTitle").textContent = card.dataset.title;
+        document.getElementById("modalAuthor").textContent = card.dataset.author;
+        document.getElementById("modalYear").textContent = card.dataset.year;
+        document.getElementById("modalGenre").textContent = card.dataset.genre;
+        document.getElementById("modalDescription").textContent = card.dataset.description;
+ 
+        if (card.dataset.available === "1") {
+            reserveBtn.textContent = "Reserveren";
+            reserveBtn.disabled = false;
+ 
+            reserveBtn.onclick = () => {
+                alert("Boek succesvol gereserveerd!");
+                reserveBtn.textContent = "Gereserveerd";
+                reserveBtn.disabled = true;
+            };
+        } else {
+            reserveBtn.textContent = "Niet beschikbaar";
+            reserveBtn.disabled = true;
+        }
+ 
+        modal.classList.remove("hidden");
+    });
+});
+ 
+closeModal.onclick = () => {
+    modal.classList.add("hidden");
+};
+ 
+window.onclick = e => {
+    if (e.target === modal) modal.classList.add("hidden");
+};
