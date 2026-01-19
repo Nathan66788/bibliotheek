@@ -26,32 +26,28 @@ include "../php/database.php"; ?>
             
             <div class="card quiz-card quiz-step active" id="step-1">
         <h2>1. Wat voor thema vind je het leukst?</h2>
-        <div class="options-wrapper">
-            <label class="option">
-                <input type="radio" name="genre" value="Avontuur">
-                <span><i class="fas fa-mountain"></i> Avontuur</span>
-            </label>
-            <label class="option">
-                <input type="radio" name="genre" value="Romance">
-                <span><i class="fas fa-heart"></i> Romance</span>
-            </label>
-            <label class="option">
-                <input type="radio" name="genre" value="Spanning">
-                <span><i class="fas fa-user-secret"></i> Spanning & Thriller</span>
-            </label>
-            <label class="option">
-                <input type="radio" name="genre" value="Fantasy">
-                <span><i class="fas fa-dragon"></i> Fantasy</span>
-            </label>
-            <label class="option">
-                <input type="radio" name="genre" value="Geschiedenis">
-                <span><i class="fas fa-landmark"></i> Geschiedenis</span>
-            </label>
-            <label class="option">
-                <input type="radio" name="genre" value="Dystopie">
-                <span><i class="fas fa-biohazard"></i> Dystopie</span>
-            </label>
-        </div>
+        <?php 
+include "../php/database.php"; 
+?>
+
+<div class="options-wrapper">
+    <?php
+    // haalt alleen de bestaande genres uit de database op
+    $sql = "SELECT DISTINCT genre FROM boeken WHERE genre IS NOT NULL AND genre != '' ORDER BY genre ASC";
+    $stmt = $conn->query($sql);
+
+    // maakt voor elke gevonden genre een button
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $genre = $row['genre'];
+        ?>
+        <label class="option">
+            <input type="radio" name="genre" value="<?php echo htmlspecialchars($genre); ?>">
+            <span><?php echo htmlspecialchars($genre); ?></span>
+        </label>
+        <?php
+    }
+    ?>
+</div>
         <div class="quiz-actions">
             <button type="button" class="btn-secondary" onclick="history.back()">Terug</button>
             <button type="button" class="btn-primary" onclick="nextQuestion(1)">Volgende <i class="fas fa-arrow-right"></i></button>
