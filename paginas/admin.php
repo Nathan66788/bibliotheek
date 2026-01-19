@@ -1,5 +1,7 @@
 <?php 
-include '../includes/header.php'; 
+// Hier komt later je PHP-logica voor het opslaan en verwijderen
+include '../includes/header.php';
+include "../php/database.php"; 
 ?>
 <div id="admin-page-root">
     <link rel="stylesheet" href="../css/style.css">

@@ -33,7 +33,7 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
             <form method="post" id="registerForm">
                 <div class="input-group">
                     <label for="name">Gebruikersnaam</label>
-                    <input name="newUsername" type="text" id="name" placeholder="Boeklezer123" required>
+                    <input name="newUsername" type="text" id="name" placeholder="2-24 tekens & geen speciale tekens" required>
                 </div>
 
                 <div class="input-group">

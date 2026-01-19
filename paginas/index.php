@@ -1,9 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION["id"])){
-    echo "<div style='padding:10px; background:#eef2ff; text-align:center;'>User logged in</div>";
-}
-
+include "../php/database.php";
 $books = [
     [
         "id" => 1,
@@ -40,23 +37,31 @@ $books = [
 
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boekzoeker.nl - Vind jouw perfecte boek</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<?php include '../includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
 
     <header class="hero" id="hero">
         <div class="hero-content">
-            <h1>Vind jouw perfecte boek!</h1>
-            <p>Doe de test welke bij jou past! Met onze slimme vragenlijst vinden we het ideale boek dat perfect aansluit bij jouw voorkeuren.</p>
-            
+            <?php if (isset($_SESSION["username"])) {
+                echo "<h1>Welkom, {$_SESSION['username']}</h1>";
+            }
+            ;?>
+            <p>Doe de test welke bij jou past! Met onze slimme vragenlijst vinden we het ideale boek dat perfect
+                aansluit bij jouw voorkeuren.</p>
+
             <div class="steps-container">
                 <h3>Hoe werkt het?</h3>
                 <div class="step">
