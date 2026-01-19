@@ -1,11 +1,9 @@
 <?php 
-// Hier komt later je PHP-logica voor het opslaan en verwijderen
 include '../includes/header.php'; 
 ?>
-
-<link rel="stylesheet" href="../css/style.css">
-
-<main class="admin-wrapper">
+<div id="admin-page-root">
+    <link rel="stylesheet" href="../css/style.css">
+    <main class="admin-wrapper">
     <section class="admin-card">
         <div class="card-header">
             <h2>Nieuw Boek Toevoegen</h2>

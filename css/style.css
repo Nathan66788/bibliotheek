@@ -744,3 +744,100 @@ footer {
         transform: translateY(0); 
     }
 }
+/* Zorgt voor de gevraagde ruimte aan de zijkant en centrering */
+.admin-wrapper {
+    max-width: 2000px !important; 
+    margin: 40px auto !important;
+    padding: 0 30px !important;
+}
+
+/* De witte kaart voor het formulier en de tabel */
+.admin-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+/* Grid voor de invoervelden */
+.admin-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Labels boven de velden */
+.admin-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Styling voor Dropdowns, Inputs en de Beschrijving (Textarea) */
+.admin-form input, 
+.admin-form select, 
+.admin-form textarea {
+    width: 100%;
+    padding: 12px 15px !important; /* !important om browser-headers te negeren */
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    background-color: #fcfcfc !important;
+    box-sizing: border-box;
+    font-family: inherit;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* De Dropdown (select) specifiek stylen met een eigen pijltje */
+.admin-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 14px;
+    padding-right: 40px !important;
+}
+
+/* De Beschrijving (textarea) extra hoog maken */
+.admin-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Focus effecten */
+.admin-form input:focus, 
+.admin-form select:focus, 
+.admin-form textarea:focus {
+    outline: none;
+    border-color: #4a6cf7 !important;
+    background-color: #fff !important;
+    box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.1);
+}
+
+/* Tabel styling onderaan de pagina */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table-img {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
