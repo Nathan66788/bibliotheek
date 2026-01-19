@@ -1,5 +1,7 @@
-<?php session_start();
-include "../php/database.php"; ?>
+<?php 
+session_start();
+include "../php/database.php"; 
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -25,78 +27,73 @@ include "../php/database.php"; ?>
        <form id="quizForm" action="resultaat.php" method="POST">
             
             <div class="card quiz-card quiz-step active" id="step-1">
-        <h2>1. Wat voor thema vind je het leukst?</h2>
-        <?php 
-include "../php/database.php"; 
-?>
+                <h2>1. Wat voor thema vind je het leukst?</h2>
+                <div class="options-wrapper">
+                    <?php
+                    
+                    // haalt alleen de bestaande genres uit de database op
+                    $sql = "SELECT DISTINCT genre FROM boeken WHERE genre IS NOT NULL AND genre != '' ORDER BY genre ASC";
+                    $stmt = $conn->query($sql);
 
-<div class="options-wrapper">
-    <?php
-    // haalt alleen de bestaande genres uit de database op
-    $sql = "SELECT DISTINCT genre FROM boeken WHERE genre IS NOT NULL AND genre != '' ORDER BY genre ASC";
-    $stmt = $conn->query($sql);
-
-    // maakt voor elke gevonden genre een button
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $genre = $row['genre'];
-        ?>
-        <label class="option">
-            <input type="radio" name="genre" value="<?php echo htmlspecialchars($genre); ?>">
-            <span><?php echo htmlspecialchars($genre); ?></span>
-        </label>
-        <?php
-    }
-    ?>
-</div>
-        <div class="quiz-actions">
-            <button type="button" class="btn-secondary" onclick="history.back()">Terug</button>
-            <button type="button" class="btn-primary" onclick="nextQuestion(1)">Volgende <i class="fas fa-arrow-right"></i></button>
-        </div>
-    </div>
-
-                <div class="card quiz-card quiz-step" id="step-2">
-                    <h2>2. Voor welke leeftijd zoek je?</h2>
-                    <div class="options-wrapper">
+                    // maakt voor elke gevonden genre een button
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $genre = $row['genre'];
+                        ?>
                         <label class="option">
-                            <input type="radio" name="age" value="Jeugd">
-                            <span>Jeugd (tot 12 jaar)</span>
+                            <input type="radio" name="genre" value="<?php echo htmlspecialchars($genre); ?>">
+                            <span><?php echo htmlspecialchars($genre); ?></span>
                         </label>
-                        <label class="option">
-                            <input type="radio" name="age" value="Young Adult">
-                            <span>Young Adult (12 - 18 jaar)</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="age" value="Volwassenen">
-                            <span>Volwassenen</span>
-                        </label>
-                    </div>
-                    <div class="quiz-actions">
-                        <button type="button" class="btn-secondary" onclick="prevQuestion(2)">Vorige</button>
-                        <button type="button" class="btn-primary" onclick="nextQuestion(2)">Volgende <i class="fas fa-arrow-right"></i></button>
-                    </div>
+                    <?php } ?>
                 </div>
-
-                <div class="card quiz-card quiz-step" id="step-3">
-                    <h2>3. Hoe dik mag het boek zijn?</h2>
-                    <div class="options-wrapper">
-                        <label class="option">
-                            <input type="radio" name="length" value="Kort">
-                            <span>Lekker kort (onder 200 pagina's)</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="length" value="Gemiddeld">
-                            <span>Gemiddeld (200 - 400 pagina's)</span>
-                        </label>
-                        <label class="option">
-                            <input type="radio" name="length" value="Dik">
-                            <span>Een dikke pil (400+ pagina's)</span>
-                        </label>
-                    </div>
-                    <div class="quiz-actions">
-                        <button type="button" class="btn-secondary" onclick="prevQuestion(3)">Vorige</button>
-                        <button type="button" class="btn-primary" onclick="nextQuestion(3)">Volgende <i class="fas fa-arrow-right"></i></button>
-                    </div>
+                <div class="quiz-actions">
+                    <button type="button" class="btn-secondary" onclick="history.back()">Terug</button>
+                    <button type="button" class="btn-primary" onclick="nextQuestion(1)">Volgende <i class="fas fa-arrow-right"></i></button>
                 </div>
+            </div>
+
+            <div class="card quiz-card quiz-step" id="step-2">
+                <h2>2. Voor welke leeftijd zoek je?</h2>
+                <div class="options-wrapper">
+                    <?php
+                    // leeftijdsgroepen uit de kolom halen
+                    $sql_age = "SELECT DISTINCT leeftijdsgroep FROM boeken WHERE leeftijdsgroep IS NOT NULL AND leeftijdsgroep != '' ORDER BY leeftijdsgroep ASC";
+                    $stmt_age = $conn->query($sql_age);
+                    while ($row_age = $stmt_age->fetch(PDO::FETCH_ASSOC)) {
+                        $leeftijd = $row_age['leeftijdsgroep'];
+                        ?>
+                        <label class="option">
+                            <input type="radio" name="age" value="<?php echo htmlspecialchars($leeftijd); ?>">
+                            <span><?php echo htmlspecialchars($leeftijd); ?></span>
+                        </label>
+                    <?php } ?>
+                </div>
+                <div class="quiz-actions">
+                    <button type="button" class="btn-secondary" onclick="prevQuestion(2)">Vorige</button>
+                    <button type="button" class="btn-primary" onclick="nextQuestion(2)">Volgende <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <div class="card quiz-card quiz-step" id="step-3">
+                <h2>3. Hoe dik mag het boek zijn?</h2>
+                <div class="options-wrapper">
+                    <label class="option">
+                        <input type="radio" name="length" value="Kort">
+                        <span>Lekker kort (onder 200 pagina's)</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="length" value="Gemiddeld">
+                        <span>Gemiddeld (200 - 400 pagina's)</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="length" value="Dik">
+                        <span>Een dikke pil (400+ pagina's)</span>
+                    </label>
+                </div>
+                <div class="quiz-actions">
+                    <button type="button" class="btn-secondary" onclick="prevQuestion(3)">Vorige</button>
+                    <button type="button" class="btn-primary" onclick="nextQuestion(3)">Volgende <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
 
             <div class="card quiz-card quiz-step" id="step-4">
                 <h2>4. Waar heb je vandaag zin in?</h2>
