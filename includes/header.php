@@ -10,6 +10,19 @@
             <li><a href="index.php#collectie">Collectie</a></li>
             <li><a href="quiz.php">Boekzoeker</a></li>
             <li><a href="index.php#about-section">Over Ons</a></li>
+            <?php
+            if (isset($_SESSION["id"])) {
+
+                global $conn;
+
+                $stmt = $conn-> prepare("SELECT user_id, rol FROM users WHERE user_id = ?");
+                $stmt->execute([$_SESSION["id"]]);
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($user["rol"] != "User") {
+                    echo ('<a href="admin.php">Beheer</a>');
+                }
+            }
+            ?>
         </ul>
 
         <a href="<?php 

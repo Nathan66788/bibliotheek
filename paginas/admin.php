@@ -1,6 +1,7 @@
 <?php 
 // Hier komt later je PHP-logica voor het opslaan en verwijderen
-include '../includes/header.php'; 
+include '../includes/header.php';
+include "../php/database.php"; 
 ?>
 
 <link rel="stylesheet" href="../css/style.css">

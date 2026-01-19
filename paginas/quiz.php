@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+include "../php/database.php"; ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
