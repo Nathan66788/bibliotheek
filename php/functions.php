@@ -73,4 +73,15 @@ function createAccount($username, $email, $password) //maak de account
     $stmt->execute([$username, $email, $hashedPassword]);
     loginCheck($email, $password);
 }
+
+
+function newBook($titel, $auteur, $genre, $new_genre, $imglink, $beschrijving) {
+    global $conn;
+    $stmt = $conn->prepare("INSERT INTO boeken (titel, auteur, genre, imglink, beschrijving) VALUES (?, ?, ?,  ?, ?)");
+    if ($genre != "nieuw"){
+    $stmt->execute([$titel, $auteur, $genre, $imglink, $beschrijving]);
+    } else {
+    $stmt->execute([$titel, $auteur, $new_genre, $imglink, $beschrijving]);
+    }
+}
 ?>

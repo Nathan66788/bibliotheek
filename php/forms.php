@@ -18,10 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             global $errormessage;
             global $passwordError;
-            $errormessage = "Ongeldige naam je naam mag maar 3-24 letters zijn en geen speciale karakters hebben";
+            $errormessage = "Ongeldige naam je naam mag maar 3-24 letters zijn en geen speciale tekens hebben";
         }
     }
 }
 
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['titel'])) {
+        $value1 = $_POST["titel"];
+        $value2 = $_POST["auteur"];
+        $value3 = $_POST["genre"];
+        $value4 = $_POST["new_genre"];
+        $value5 = $_POST["imglink"];
+        $value6 = $_POST["beschrijving"];
+        newBook($value1, $value2, $value3, $value4, $value5, $value6);
+        header("Location: ../paginas/admin.php?success=1");
+        exit;
+    }
+}
 ?>
