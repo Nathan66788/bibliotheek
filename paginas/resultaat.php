@@ -51,7 +51,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jouw resultaat - Boekzoeker.nl</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -65,7 +65,7 @@ try {
             
             <div class="book-info">
                 <h1><?php echo $boeken['titel']; ?></h1>
-                <p style="color: #666; font-size: 1.1rem; margin: 5px 0;">door <?php echo $boeken['auteur']; ?></p>
+                <p style="color: #665; font-size: 1.1rem; margin: 5px 0;">door <?php echo $boeken['auteur']; ?></p>
 
                 <div class="location-box">
                     <div class="location-header">
