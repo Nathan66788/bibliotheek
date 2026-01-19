@@ -1,4 +1,5 @@
 <?php
+try {
 include("../php/database.php");
 
     // Haal het genre op uit de URL 
@@ -33,7 +34,7 @@ include("../php/database.php");
             'beschrijving' => 'Helaas hebben we geen match gevonden voor dit genre.'
         ];
     }
-} catch(PDOException $e) {
+}  catch(PDOException $e) {
     die("Database fout: " . $e->getMessage());
 }
 ?>
