@@ -128,6 +128,24 @@ include '../includes/header.php';
         </main>
     </section>
 
+    <section id="about-section" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>Over Bibliotheek Zoetermeer</h2>
+                <p>Wij zijn de plek voor ontmoeting en ontwikkeling in het hart van Zoetermeer. Onze collectie is met zorg samengesteld voor jong en oud.</p>
+                <p><strong>Locatie:</strong> Forum Zoetermeer, Stadhuisplein 1.</p>
+            </div>
+            <div class="openingstijden">
+                <h3>Openingstijden</h3>
+                <ul>
+                    <li><span>Maandag - Vrijdag:</span> 10:00 - 20:00</li>
+                    <li><span>Zaterdag:</span> 10:00 - 17:00</li>
+                    <li><span>Zondag:</span> 12:00 - 17:00</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <div id="modal" class="modal hidden">
         <div class="modal-content">
             <span id="closeModal">&times;</span>
