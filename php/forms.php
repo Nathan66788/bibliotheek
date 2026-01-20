@@ -32,7 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $value4 = $_POST["new_genre"];
         $value5 = $_POST["imglink"];
         $value6 = $_POST["beschrijving"];
-        newBook($value1, $value2, $value3, $value4, $value5, $value6);
+        $value7  = $_POST['leeftijdsgroep'];
+        $value8  = $_POST['aantal_paginas'];
+        $value9  = $_POST['verdieping'];
+        $value10 = $_POST['kast'];
+        newBook($value1, $value2, $value3, $value4, $value5,$value6,$value7,$value8,$value9,$value10);
         header("Location: ../paginas/admin.php?success=1");
         exit;
     }

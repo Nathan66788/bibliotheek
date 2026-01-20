@@ -1,5 +1,8 @@
 <?php
 session_start();
+include '../php/database.php';
+include '../php/functions.php';
+include '../php/forms.php';
 ?>
 
 <!DOCTYPE html>
@@ -51,9 +54,6 @@ session_start();
 <body>
 
 <?php 
-if (isset($_SESSION["id"])){
-    echo "<div style='padding:10px; background:#eef2ff; text-align:center;'>Gebruiker ingelogd</div>";
-}
 include '../includes/header.php'; 
 ?>
 

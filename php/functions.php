@@ -75,13 +75,13 @@ function createAccount($username, $email, $password) //maak de account
 }
 
 
-function newBook($titel, $auteur, $genre, $new_genre, $imglink, $beschrijving) {
+function newBook($titel, $auteur, $genre, $new_genre, $imglink, $beschrijving,$leeftijdsgroep,$aantalpaginas,$verdieping,$kast) {
     global $conn;
-    $stmt = $conn->prepare("INSERT INTO boeken (titel, auteur, genre, imglink, beschrijving) VALUES (?, ?, ?,  ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO boeken (titel, auteur, genre, imglink, beschrijving,leeftijdsgroep,aantalpaginas,verdieping,kast) VALUES (?, ?, ?, ? ,? ,? ,? ,? ,?)");
     if ($genre != "nieuw"){
-    $stmt->execute([$titel, $auteur, $genre, $imglink, $beschrijving]);
+    $stmt->execute([$titel, $auteur, $genre, $imglink, $beschrijving, $leeftijdsgroep, $aantalpaginas, $verdieping, $kast]);
     } else {
-    $stmt->execute([$titel, $auteur, $new_genre, $imglink, $beschrijving]);
+    $stmt->execute([$titel, $auteur, $new_genre, $imglink, $beschrijving,$leeftijdsgroep,$aantalpaginas,$verdieping,$kast]);
     }
 }
 ?>

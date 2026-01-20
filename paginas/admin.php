@@ -31,18 +31,58 @@ try {
                 <h2>Nieuw Boek Toevoegen</h2>
                 <form method="post" class="admin-form">
                     <div class="form-grid">
-                        <div class="input-group"><label>Titel</label><input type="text" name="titel" required></div>
-                        <div class="input-group"><label>Auteur</label><input type="text" name="auteur" required></div>
+                        <div class="input-group">
+                            <label>Titel</label>
+                            <input type="text" name="titel" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Auteur</label>
+                            <input type="text" name="auteur" required>
+                        </div>
+
                         <div class="input-group">
                             <label>Genre</label>
                             <select name="genre" id="genreSelect" required>
                                 <option value="" disabled selected>Kies een genre...</option>
-                                <?php foreach ($genres as $genre) {echo "<option value='{$genre['genre']}'>{$genre['genre']}</option>";}?>
+                                <?php foreach ($genres as $genre) {
+                                    echo "<option value='{$genre['genre']}'>{$genre['genre']}</option>";
+                                } ?>
                                 <option value="nieuw">Nieuw</option>
                             </select>
-                            <input type="text" name="new_genre" id="newGenreInput" placeholder="Typ een nieuw genre" style="display:none;">
+                            <input type="text" name="new_genre" id="newGenreInput" placeholder="Typ een nieuw genre"
+                                style="display:none;">
                         </div>
-                        <div class="input-group"><label>Afbeelding URL</label><input type="url" name="imglink"></div>
+
+                        <div class="input-group">
+                            <label>Leeftijdsgroep</label>
+                            <select name="leeftijdsgroep" id="leeftijdSelect">
+                                <option value="" disabled selected>Kies een leeftijdsgroep...</option>
+                                <option value="10-15">10-15</option>
+                                <option value="12-18">12-18</option>
+                                <option value="18+">18+</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Aantal Pagina's</label>
+                            <input type="number" name="aantal_paginas">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Verdieping</label>
+                            <input type="text" name="verdieping">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Kast</label>
+                            <input type="text" name="kast">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Afbeelding URL</label>
+                            <input type="url" name="imglink">
+                        </div>
                     </div>
                     <div class="input-group full-width" style="margin-top: 15px;">
                         <label>Beschrijving</label>
@@ -64,6 +104,10 @@ try {
                                 <th>Auteur</th>
                                 <th>Aanwezigheid</th>
                                 <th>Beschrijving</th>
+                                <th>Leeftijd</th>
+                                <th>Pagina's</th>
+                                <th>Verdieping</th>
+                                <th>Kast</th>
                                 <th>Acties</th>
                             </tr>
                         </thead>
@@ -76,6 +120,10 @@ try {
                                     <td><?php echo ($boek['auteur']); ?></td>
                                     <td><?php echo ($boek['aanwezig']); ?></td>\
                                     <td><?php echo ($boek['beschrijving']); ?></td>
+                                    <td><?php echo ($boek['leeftijdsgroep']); ?></td>
+                                    <td><?php echo ($boek['aantalpaginas']); ?></td>
+                                    <td><?php echo ($boek['verdieping']); ?></td>
+                                    <td><?php echo ($boek['kast']); ?></td>                                    
                                     <td><button class="btn-edit-small">Aanpassen</button></td>
                                 </tr>
                             <?php endforeach; ?>
