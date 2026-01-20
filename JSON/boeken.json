@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "title": "De Hobbit",
+        "author": "J.R.R. Tolkien",
+        "year": 1937,
+        "genre": "Fantasy",
+        "description": "Een avontuurlijk fantasyverhaal over Bilbo Balings die met dwergen op reis gaat.",
+        "available": true,
+        "image": "../images/hobbit.jpg"
+    },
+    {
+        "id": 2,
+        "title": "1984",
+        "author": "George Orwell",
+        "year": 1949,
+        "genre": "Dystopie",
+        "description": "Een beklemmende toekomstvisie over een totalitaire staat en Big Brother.",
+        "available": false,
+        "image": "../images/1984.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Sapiens",
+        "author": "Yuval Noah Harari",
+        "year": 2011,
+        "genre": "Geschiedenis",
+        "description": "Een ontdekkingsreis door de geschiedenis van de mensheid van de steentijd tot nu.",
+        "available": true,
+        "image": "../images/sapiens.jpg"
+    },
+    {
+        "id": 4,
+        "title": "De Avonden",
+        "author": "Gerard Reve",
+        "year": 1947,
+        "genre": "Literatuur",
+        "description": "De belevenissen van Frits van Egters tijdens de laatste tien dagen van het jaar.",
+        "available": true,
+        "image": "../images/avonden.jpg"
+    },
+    {
+        "id": 5,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "year": 1925,
+        "genre": "Klassieker",
+        "description": "Een verhaal over rijkdom, liefde en de Amerikaanse droom in de jaren '20.",
+        "available": true,
+        "image": "../images/gatsby.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Dracula",
+        "author": "Bram Stoker",
+        "year": 1897,
+        "genre": "Horror",
+        "description": "De klassieke briefroman die de wereld kennis liet maken met graaf Dracula.",
+        "available": true,
+        "image": "../images/dracula.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Frankenstein",
+        "author": "Mary Shelley",
+        "year": 1818,
+        "genre": "Horror",
+        "description": "Het verhaal van Victor Frankenstein die een levend wezen schept uit dode materie.",
+        "available": true,
+        "image": "../images/frankenstein.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Alice in Wonderland",
+        "author": "Lewis Carroll",
+        "year": 1865,
+        "genre": "Fantasy",
+        "description": "Alice valt in een konijnenhol en komt in een bizarre droomwereld terecht.",
+        "available": true,
+        "image": "../images/alice.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "year": 1851,
+        "genre": "Avontuur",
+        "description": "De obsessieve jacht van kapitein Achab op de witte walvis.",
+        "available": true,
+        "image": "../images/mobydick.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Don Quichot",
+        "author": "Miguel de Cervantes",
+        "year": 1605,
+        "genre": "Klassieker",
+        "description": "Een edelman denkt dat hij een ridder is en vecht tegen windmolens.",
+        "available": true,
+        "image": "../images/quichot.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "year": 1813,
+        "genre": "Romantiek",
+        "description": "Een scherpe komedie over manieren, opvoeding en huwelijk.",
+        "available": false,
+        "image": "../images/pride.jpg"
+    },
+    {
+        "id": 12,
+        "title": "Oliver Twist",
+        "author": "Charles Dickens",
+        "year": 1837,
+        "genre": "Fictie",
+        "description": "Een weesjongen probeert te overleven in het harde Londen van de 19e eeuw.",
+        "available": true,
+        "image": "../images/oliver.webp"
+    },
+    {
+        "id": 13,
+        "title": "The Picture of Dorian Gray",
+        "author": "Oscar Wilde",
+        "year": 1890,
+        "genre": "Filosofie",
+        "description": "Een man blijft jong terwijl zijn portret veroudert en zijn zonden toont.",
+        "available": true,
+        "image": "../images/dorian.jpg"
+    },
+    {
+        "id": 14,
+        "title": "Ulysses",
+        "author": "James Joyce",
+        "year": 1922,
+        "genre": "Literatuur",
+        "description": "Een modernistische klassieker die één dag in het leven van Leopold Bloom beschrijft.",
+        "available": true,
+        "image": "../images/ulysses.jpg"
+    },
+    {
+        "id": 15,
+        "title": "The War of the Worlds",
+        "author": "H.G. Wells",
+        "year": 1898,
+        "genre": "Sci-Fi",
+        "description": "Een invasie van Marsmannetjes zet de wereld op zijn kop.",
+        "available": true,
+        "image": "../images/warworlds.jpg"
+    },
+    {
+        "id": 16,
+        "title": "Little Women",
+        "author": "Louisa May Alcott",
+        "year": 1868,
+        "genre": "Familie",
+        "description": "Het leven van de vier zussen March tijdens de Amerikaanse Burgeroorlog.",
+        "available": true,
+        "image": "../images/littlewomen.jpg"
+    },
+    {
+        "id": 17,
+        "title": "Treasure Island",
+        "author": "Robert Louis Stevenson",
+        "year": 1883,
+        "genre": "Avontuur",
+        "description": "Jim Hawkins vindt een schatkaart en gaat op zoek naar piratengoud.",
+        "available": true,
+        "image": "../images/treasure.jpg"
+    },
+    {
+        "id": 18,
+        "title": "The Time Machine",
+        "author": "H.G. Wells",
+        "year": 1895,
+        "genre": "Sci-Fi",
+        "description": "Een uitvinder reist naar de verre toekomst van de mensheid.",
+        "available": false,
+        "image": "../images/timemachine.jpg"
+    },
+    {
+        "id": 19,
+        "title": "A Christmas Carol",
+        "author": "Charles Dickens",
+        "year": 1843,
+        "genre": "Klassieker",
+        "description": "De vrek Scrooge leert de ware betekenis van Kerstmis door drie geesten.",
+        "available": true,
+        "image": "../images/christmas.jpg"
+    },
+    {
+        "id": 20,
+        "title": "Dubliners",
+        "author": "James Joyce",
+        "year": 1914,
+        "genre": "Fictie",
+        "description": "Een verzameling korte verhalen over het leven in Dublin aan het begin van de 20e eeuw.",
+        "available": true,
+        "image": "../images/dubliners.jpg"
+    }
+]
