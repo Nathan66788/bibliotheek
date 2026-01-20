@@ -42,7 +42,7 @@ session_start();
             transform: scale(1.05);
         }
 
-        /* Deze class verbergt de boeken na de eerste 8 */
+        /* Deze class verbergt de boeken na de eerste 10 */
         .hidden-book {
             display: none !important;
         }
@@ -61,9 +61,52 @@ include '../includes/header.php';
         <div class="hero-content">
             <h1>Vind jouw perfecte boek!</h1>
             <p>Ontdek onze uitgebreide collectie in Zoetermeer.</p>
+
+              <div class="steps-container">
+                <h3>Hoe werkt het?</h3>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <strong>Doe de test</strong>
+                        <p>Beantwoord een paar vragen over je leesvoorkeuren</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <strong>Krijg aanbevelingen</strong>
+                        <p>Zie boeken die perfect bij jou passen</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <strong>Vind je boek</strong>
+                        <p>Zie direct waar het boek in de bibliotheek ligt (Zoetermeer)</p>
+                    </div>
+                </div>
+            </div>
+ 
             <a href="quiz.php" class="btn-primary">Start de vragenlijst <i class="fas fa-arrow-right"></i></a>
         </div>
     </header>
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-book-open"></i>
+            <h3>Grote collectie</h3>
+            <p>Duizenden boeken in verschillende genres.</p>
+        </div>
+        <div class="feature-card">
+            <i class="far fa-star"></i>
+            <h3>Persoonlijke match</h3>
+            <p>Op basis van jouw antwoorden.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Makkelijk te vinden</h3>
+            <p>Directe route in Forum Zoetermeer.</p>
+        </div>
+    </section>
 
     <section id="collectie">
         <header class="boekheader">
@@ -109,7 +152,7 @@ include '../includes/header.php';
         const closeModal = document.getElementById('closeModal');
         
         let allBooks = [];
-        let isExpanded = false; // Status: is het menu uitgeklapt?
+        let isExpanded = false; // Menu niet uitgeklapt
 
         // 1. Data ophalen
         fetch('../JSON/boeken.json')
@@ -119,7 +162,7 @@ include '../includes/header.php';
                 renderBooks(allBooks);
             });
 
-        // 2. Boeken tekenen
+        // 2. Boeken laden
         function renderBooks(books) {
             bookList.innerHTML = '';
             
@@ -127,7 +170,7 @@ include '../includes/header.php';
                 const card = document.createElement('div');
                 card.className = 'book-card';
                 
-                // Verberg alles na de eerste 8, tenzij we al op 'isExpanded' staan
+                // Verberg alles na de eerste 10, tenzij we al op isExpanded staan
                 if (index >= 10 && !isExpanded) {
                     card.classList.add('hidden-book');
                 }
@@ -146,12 +189,12 @@ include '../includes/header.php';
             });
 
             // Toon/verberg de knop op basis van het aantal resultaten
-            loadMoreBtn.parentElement.style.display = books.length > 8 ? 'block' : 'none';
+            loadMoreBtn.parentElement.style.display = books.length > 10 ? 'block' : 'none';
         }
 
         // 3. De Uitklap/Inklap Logica
         loadMoreBtn.addEventListener('click', () => {
-            isExpanded = !isExpanded; // Wissel de status (true/false)
+            isExpanded = !isExpanded; // Wissel de status
 
             if (isExpanded) {
                 // Uitklappen
@@ -161,11 +204,11 @@ include '../includes/header.php';
                 btnIcon.className = "fas fa-chevron-up";
             } else {
                 // Inklappen
-                renderBooks(allBooks); // Teken de lijst opnieuw (waardoor de class weer wordt toegevoegd)
+                renderBooks(allBooks); // Teken de lijst opnieuw 
                 btnText.innerText = "Bekijk meer boeken";
                 btnIcon.className = "fas fa-chevron-down";
                 
-                // Scroll zachtjes terug naar het begin van de collectie
+                // Scroll terug naar het begin van de collectie
                 document.getElementById('collectie').scrollIntoView({ behavior: 'smooth' });
             }
         });
