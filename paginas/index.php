@@ -152,6 +152,8 @@ include '../includes/header.php';
             <h2 id="modalTitle"></h2>
             <img id="modalImage" src="" alt="" class="modal-image" style="max-width: 200px;">
             <p><strong>Auteur:</strong> <span id="modalAuthor"></span></p>
+            <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+            <p><strong>Jaar:</strong> <span id="modalYear"></span></p>
             <p id="modalDescription"></p>
             <button id="reserveBtn" class="btn-primary"></button>
         </div>
@@ -236,6 +238,8 @@ include '../includes/header.php';
             document.getElementById('modalTitle').innerText = book.title;
             document.getElementById('modalImage').src = book.image;
             document.getElementById('modalAuthor').innerText = book.author;
+            document.getElementById('modalGenre').innerText = book.genre;
+            document.getElementById('modalYear').innerText = book.year;
             document.getElementById('modalDescription').innerText = book.description;
             document.getElementById('reserveBtn').innerText = book.available ? "Reserveer nu" : "Niet beschikbaar";
             modal.classList.remove('hidden');

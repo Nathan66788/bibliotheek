@@ -5,7 +5,7 @@
         "author": "J.R.R. Tolkien",
         "year": 1937,
         "genre": "Fantasy",
-        "description": "Een avontuurlijk fantasyverhaal over Bilbo Balings die met dwergen op reis gaat.",
+        "description": "Bilbo Balings leidt een comfortabel en voorspelbaar leven in zijn hobbitstee, totdat de tovenaar Gandalf en dertien dwergen hem meesleuren op een gevaarlijke reis. Ze zijn vastbesloten om de verloren schat van de dwergen te heroveren op de angstaanjagende draak Smaug in de Eenzame Berg. Onderweg ontdekt de bescheiden Bilbo dat hij over meer moed en vindingrijkheid beschikt dan hij ooit had durven dromen.",
         "available": true,
         "image": "../images/hobbit.jpg"
     },
@@ -15,7 +15,7 @@
         "author": "George Orwell",
         "year": 1949,
         "genre": "Dystopie",
-        "description": "Een beklemmende toekomstvisie over een totalitaire staat en Big Brother.",
+        "description": "In een angstaanjagende toekomst wordt de wereld beheerst door de Partij en haar leider, Big Brother. Winston Smith werkt voor het Ministerie van Waarheid, waar hij de geschiedenis herschrijft om deze in lijn te brengen met de propaganda van de staat. Wanneer hij een verboden liefdesrelatie begint en begint te twijfelen aan de realiteit die hem wordt voorgeschoteld, zet hij zijn leven op het spel in een strijd tegen een systeem dat zelfs gedachten controleert.",
         "available": false,
         "image": "../images/1984.jpg"
     },
@@ -25,7 +25,7 @@
         "author": "Yuval Noah Harari",
         "year": 2011,
         "genre": "Geschiedenis",
-        "description": "Een ontdekkingsreis door de geschiedenis van de mensheid van de steentijd tot nu.",
+        "description": "Dit boek neemt de lezer mee op een fascinerende reis door de hele geschiedenis van de mensheid, van de eerste evolutie van Homo sapiens in Afrika tot de technologische revoluties van vandaag. Harari onderzoekt hoe we als soort de wereld hebben gedomineerd door het creëren van gedeelde mythes, zoals religie, geld en mensenrechten, en stelt indringende vragen over waar we als mensheid naartoe gaan in de toekomst.",
         "available": true,
         "image": "../images/sapiens.jpg"
     },
@@ -35,7 +35,7 @@
         "author": "Gerard Reve",
         "year": 1947,
         "genre": "Literatuur",
-        "description": "De belevenissen van Frits van Egters tijdens de laatste tien dagen van het jaar.",
+        "description": "Frits van Egters telt de laatste tien dagen van het jaar 1946 af in het ouderlijk huis in Amsterdam. In een meesterlijke mix van cynisme, zwarte humor en beklemmende verveling observeert hij de dagelijkse rituelen van zijn ouders en zijn eigen fysieke en mentale verval. Het is een indringend portret van de naoorlogse tijdgeest en de existentiële eenzaamheid van een jonge man die probeert betekenis te geven aan zijn dagen.",
         "available": true,
         "image": "../images/avonden.jpg"
     },
@@ -45,7 +45,7 @@
         "author": "F. Scott Fitzgerald",
         "year": 1925,
         "genre": "Klassieker",
-        "description": "Een verhaal over rijkdom, liefde en de Amerikaanse droom in de jaren '20.",
+        "description": "In de 'Roaring Twenties' op Long Island wordt de jonge Nick Carraway meegezogen in de decadente wereld van zijn buurman, de mysterieuze miljonair Jay Gatsby. Gatsby organiseert legendarische feesten in de hoop de aandacht te trekken van zijn oude liefde, Daisy Buchanan. Wat volgt is een tragisch verhaal over obsessie, klassenverschillen en het onvermijdelijke verval van de Amerikaanse droom onder de glans van rijkdom.",
         "available": true,
         "image": "../images/gatsby.jpg"
     },
@@ -55,7 +55,7 @@
         "author": "Bram Stoker",
         "year": 1897,
         "genre": "Horror",
-        "description": "De klassieke briefroman die de wereld kennis liet maken met graaf Dracula.",
+        "description": "Wanneer de jonge advocaat Jonathan Harker naar Transsylvanië reist om de mysterieuze graaf Dracula bij te staan bij de aankoop van een huis in Londen, raakt hij gevangen in een nachtmerrie. De graaf is een eeuwenoude vampier die van plan is zijn duistere invloed over Engeland te verspreiden. Een kleine groep dappere mannen en vrouwen, geleid door professor Van Helsing, moet alles op alles zetten om dit monsterlijke kwaad te stoppen.",
         "available": true,
         "image": "../images/dracula.jpg"
     },
@@ -65,7 +65,7 @@
         "author": "Mary Shelley",
         "year": 1818,
         "genre": "Horror",
-        "description": "Het verhaal van Victor Frankenstein die een levend wezen schept uit dode materie.",
+        "description": "De ambitieuze wetenschapper Victor Frankenstein ontdekt het geheim van het leven en stelt uit dode lichaamsdelen een reusachtig wezen samen. Geschokt door de gruwelijkheid van zijn eigen creatie, vlucht hij weg. Het verstoten en eenzame wezen, dat hunkert naar liefde en acceptatie, verandert door de afwijzing van de maatschappij in een wraakzuchtig monster dat Victors leven en dat van zijn dierbaren systematisch verwoest.",
         "available": true,
         "image": "../images/frankenstein.jpg"
     },
@@ -75,7 +75,7 @@
         "author": "Lewis Carroll",
         "year": 1865,
         "genre": "Fantasy",
-        "description": "Alice valt in een konijnenhol en komt in een bizarre droomwereld terecht.",
+        "description": "Op een lome middag ziet Alice een pratend wit konijn met een horloge voorbijrennen en besluit hem te volgen in een konijnenhol. Ze komt terecht in een wonderlijke wereld waar logica niet bestaat en waar ze kennismaakt met onvergetelijke figuren zoals de Cheshire Cat, de Gekke Hoedenmaker en de tirannieke Hartenkoningin. Het is een tijdloos verhaal over de grens tussen droom en werkelijkheid, vol taalgrapjes en absurdisme.",
         "available": true,
         "image": "../images/alice.jpg"
     },
@@ -85,7 +85,7 @@
         "author": "Herman Melville",
         "year": 1851,
         "genre": "Avontuur",
-        "description": "De obsessieve jacht van kapitein Achab op de witte walvis.",
+        "description": "Ismael monstert aan op de walvisvaarder Pequod, onder leiding van de mysterieuze kapitein Achab. Al snel wordt duidelijk dat Achab niet uit is op olie of winst, maar op wraak: hij wil de enorme witte walvis Moby Dick vinden, die hem ooit zijn been kostte. De jacht verandert in een destructieve obsessie die de hele bemanning meesleurt in een gevecht tegen de brute kracht van de natuur en het noodlot.",
         "available": true,
         "image": "../images/mobydick.jpg"
     },
@@ -95,7 +95,7 @@
         "author": "Miguel de Cervantes",
         "year": 1605,
         "genre": "Klassieker",
-        "description": "Een edelman denkt dat hij een ridder is en vecht tegen windmolens.",
+        "description": "Alonso Quijano is een verarmde edelman die zo veel ridderromans heeft gelezen dat hij gelooft dat hij zelf een dwalende ridder is. Onder de naam Don Quichot trekt hij door Spanje op zijn magere paard Rocinant, vergezeld door zijn trouwe maar nuchtere schildknaap Sancho Panza. In zijn waanbeelden vecht hij tegen windmolens die hij aanziet voor reuzen, alles ter ere van zijn denkbeeldige jonkvrouw Dulcinea.",
         "available": true,
         "image": "../images/quichot.jpg"
     },
@@ -105,7 +105,7 @@
         "author": "Jane Austen",
         "year": 1813,
         "genre": "Romantiek",
-        "description": "Een scherpe komedie over manieren, opvoeding en huwelijk.",
+        "description": "Elizabeth Bennet is een intelligente en eigenzinnige jonge vrouw die te maken krijgt met de druk om een goed huwelijk te sluiten in het Engeland van de 19e eeuw. Wanneer ze de rijke maar schijnbaar hooghartige meneer Darcy ontmoet, ontstaat er direct een wederzijdse afkeer. Austen schetst met veel humor hoe vooroordelen en sociale klassen de liefde in de weg kunnen staan, totdat beide personages hun eigen tekortkomingen leren inzien.",
         "available": false,
         "image": "../images/pride.jpg"
     },
@@ -115,9 +115,9 @@
         "author": "Charles Dickens",
         "year": 1837,
         "genre": "Fictie",
-        "description": "Een weesjongen probeert te overleven in het harde Londen van de 19e eeuw.",
+        "description": "De weesjongen Oliver Twist groeit op onder erbarmelijke omstandigheden in een werkhuis. Nadat hij om meer pap durft te vragen, wordt hij weggestuurd en vlucht hij naar Londen. Daar belandt hij in de dievenbende van de sluwe Fagin en de geweldadige Bill Sikes. Ondanks de duistere wereld van criminaliteit waarin hij terechtkomt, blijft Oliver zijn onschuld behouden, terwijl het verhaal de harde sociale ongelijkheid van het victoriaanse tijdperk blootlegt.",
         "available": true,
-        "image": "../images/oliver.webp"
+        "image": "../images/oliver.jpg"
     },
     {
         "id": 13,
@@ -125,7 +125,7 @@
         "author": "Oscar Wilde",
         "year": 1890,
         "genre": "Filosofie",
-        "description": "Een man blijft jong terwijl zijn portret veroudert en zijn zonden toont.",
+        "description": "Dorian Gray is een beeldschone jongeman die de wens uitspreekt dat hij altijd jong mag blijven, terwijl een geschilderd portret van hem in zijn plaats veroudert. Onder invloed van de hedonistische Lord Henry geeft Dorian zich over aan een leven van extreem genot en zonde. Terwijl zijn uiterlijk onveranderd blijft, verandert het portret in een gruwelijke weergave van zijn morele corruptie, wat hem uiteindelijk tot waanzin drijft.",
         "available": true,
         "image": "../images/dorian.jpg"
     },
@@ -135,7 +135,7 @@
         "author": "James Joyce",
         "year": 1922,
         "genre": "Literatuur",
-        "description": "Een modernistische klassieker die één dag in het leven van Leopold Bloom beschrijft.",
+        "description": "Deze baanbrekende roman volgt Leopold Bloom tijdens zijn omzwervingen door Dublin op 16 juni 1904. Joyce gebruikt de 'stream of consciousness' techniek om de diepste gedachten van zijn personages bloot te leggen. De structuur van het boek is losjes gebaseerd op de Odyssee van Homerus, waarbij alledaagse gebeurtenissen worden verheven tot een episch en taalkundig experiment dat de grenzen van de literatuur voorgoed veranderde.",
         "available": true,
         "image": "../images/ulysses.jpg"
     },
@@ -145,7 +145,7 @@
         "author": "H.G. Wells",
         "year": 1898,
         "genre": "Sci-Fi",
-        "description": "Een invasie van Marsmannetjes zet de wereld op zijn kop.",
+        "description": "In een tijd dat men dacht dat de mensheid de hoogste vorm van leven was, verschijnen er plotseling mysterieuze cilinders uit de ruimte in het zuiden van Engeland. Uit de cilinders komen hoogtechnologische Martianen in reusachtige driepoten die met hun hittestralen alles op hun weg vernietigen. De verteller beschrijft de paniek, het instorten van de maatschappij en de totale machteloosheid van het Britse leger tegenover deze superieure vijand.",
         "available": true,
         "image": "../images/warworlds.jpg"
     },
@@ -155,7 +155,7 @@
         "author": "Louisa May Alcott",
         "year": 1868,
         "genre": "Familie",
-        "description": "Het leven van de vier zussen March tijdens de Amerikaanse Burgeroorlog.",
+        "description": "Het verhaal volgt de vier zussen March — de verstandige Meg, de tomboy Jo, de zachte Beth en de artistieke Amy — terwijl ze opgroeien in Massachusetts tijdens de Amerikaanse Burgeroorlog. Met hun vader aan het front en hun moeder die hard werkt om de eindjes aan elkaar te knopen, beleven de zussen de vreugde en het verdriet van vriendschap, eerste liefdes en het verlies van onschuld, terwijl ze elk hun eigen weg in de wereld zoeken.",
         "available": true,
         "image": "../images/littlewomen.jpg"
     },
@@ -165,7 +165,7 @@
         "author": "Robert Louis Stevenson",
         "year": 1883,
         "genre": "Avontuur",
-        "description": "Jim Hawkins vindt een schatkaart en gaat op zoek naar piratengoud.",
+        "description": "Wanneer de jonge Jim Hawkins een mysterieuze schatkaart vindt in de kist van een overleden zeerover, begint hij aan een spannend avontuur. Hij monstert aan op de Hispaniola en vertrekt naar een onbewoond eiland. Wat hij niet weet, is dat de charismatische scheepskok Long John Silver een muiterij voorbereidt. Het wordt een dodelijke race tussen de eerlijke zeelieden en de meedogenloze piraten om de verborgen goudschat van kapitein Flint.",
         "available": true,
         "image": "../images/treasure.jpg"
     },
@@ -175,7 +175,7 @@
         "author": "H.G. Wells",
         "year": 1895,
         "genre": "Sci-Fi",
-        "description": "Een uitvinder reist naar de verre toekomst van de mensheid.",
+        "description": "Een Victoriaanse wetenschapper beweert een machine te hebben uitgevonden waarmee hij door de tijd kan reizen. Hij vertelt zijn sceptische vrienden over zijn reis naar het jaar 802.701. Daar ontmoet hij de vredige Eloi, maar ontdekt al snel dat zij in angst leven voor de kannibalistische Morlocks die onder de grond wonen. Wells gebruikt dit verhaal als een scherpe sociale kritiek op de klassenstrijd en de mogelijke evolutie van de mensheid.",
         "available": false,
         "image": "../images/timemachine.jpg"
     },
@@ -185,7 +185,7 @@
         "author": "Charles Dickens",
         "year": 1843,
         "genre": "Klassieker",
-        "description": "De vrek Scrooge leert de ware betekenis van Kerstmis door drie geesten.",
+        "description": "Ebenezer Scrooge is een gierige en eenzame oude man die een hartgrondige hekel heeft aan Kerstmis. Op kerstavond krijgt hij bezoek van de geest van zijn overleden compagnon Marley, die hem waarschuwt voor de gevolgen van zijn egoïsme. Gedurende de nacht wordt Scrooge bezocht door drie geesten: die van het Verleden, het Heden en de Toekomst. Zij laten hem zien wat hij verloren heeft en wat zijn bittere lot zal zijn als hij zijn leven niet betert.",
         "available": true,
         "image": "../images/christmas.jpg"
     },
@@ -195,7 +195,7 @@
         "author": "James Joyce",
         "year": 1914,
         "genre": "Fictie",
-        "description": "Een verzameling korte verhalen over het leven in Dublin aan het begin van de 20e eeuw.",
+        "description": "In deze verzameling van vijftien korte verhalen schetst Joyce een meedogenloos eerlijk en soms somber portret van de inwoners van Dublin aan het begin van de twintigste eeuw. De verhalen volgen personages van kindertijd tot ouderdom en belichten thema's als religieuze beklemming, sociale verlamming en de zoektocht naar verlichting. Het hoogtepunt van de bundel is het beroemde verhaal 'The Dead', een reflectie op liefde, herinnering en sterfelijkheid.",
         "available": true,
         "image": "../images/dubliners.jpg"
     }
